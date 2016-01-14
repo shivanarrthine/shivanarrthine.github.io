@@ -1,3 +1,9 @@
 
-$primary: #f00;
-$secondary: #000;
+$primary: #2E73C3;
+$white: #fff;
+
+@mixin transition($property, $duration, $transition){
+	transition: $property $duration $transition;
+	-webkit-transition: $property $duration $transition;
+	-moz-transition: $property $duration $transition;
+}
