@@ -1,92 +1,118 @@
 
 @import "variables";
 
-.landing{
-	position: absolute;
-	width: 480px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	text-align: center;
-	padding: 50px 40px 40px;
-	border: 2px solid $white;
+.landing-background{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/bg-landing.jpg");
+	background-position: center;
+	background-size: cover;
 
-	h1{
-		font-size: 44px;
-		font-weight: 300;
+	.landing-overlay{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: rgba(46,115,195,0.6);
 	}
 
-	h3{
-		font-size: 14px;
-		font-weight: 600;
-		margin: 10px 0 30px;
-		text-transform: uppercase;
-	}
+	.landing{
+		position: absolute;
+		width: 480px;
+		top: 50%;
+		left: 0;
+		transform: translate(15%, -50%);
+		-webkit-transform: translate(15%, -50%);
+		-moz-transform: translate(15%, -50%);
+		padding: 50px 40px 40px;
+		z-index: 1;
 
-	p{
-		font-size: 14px;
-		line-height: 1.6;
-		font-weight: 300;
-	}
+		&:before{
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			background: rgba(255,255,255,0.3);
+			@include blur(100px);
+		}
 
-	ul.social-links{
-		margin-top: 30px;
+		h1{
+			font-size: 44px;
+			font-weight: 300;
+		}
 
-		li{
-			display: inline-block;
-			margin-right: 5px;
-			padding: 3px;
-			border-radius: 50px;
-			-webkit-border-radius: 50px;
-			-moz-border-radius: 50px;
-			border: 2px solid transparent;
-			//@include transition(border, 0.1s, ease-in-out);
+		h3{
+			font-size: 14px;
+			font-weight: 600;
+			margin: 10px 0 30px;
+			text-transform: uppercase;
+		}
 
-			a{
-				display: block;
-				background: $white;
-				color: $primary;
-				padding: 7px 10px;
-				font-size: 18px;
+		p{
+			font-size: 15px;
+			line-height: 1.7;
+			font-weight: 300;
+		}
+
+		ul.social-links{
+			margin-top: 30px;
+
+			li{
+				display: inline-block;
+				margin-right: 5px;
+				padding: 3px;
 				border-radius: 50px;
 				-webkit-border-radius: 50px;
 				-moz-border-radius: 50px;
-
-				span{
-					width: 0;
-					opacity: 0;
-					display: none;
-					@include transition(all, 0.3s, ease-in-out);
-				}
-			}
-
-			&:hover{
-				border-color: $white;
+				border: 2px solid transparent;
+				@include transition(border, 0.3s, ease-in-out);
 
 				a{
-					span{
-						
-					}
+					display: block;
+					background: $white;
+					color: $primary;
+					padding: 7px 10px;
+					font-size: 18px;
+					border-radius: 50px;
+					-webkit-border-radius: 50px;
+					-moz-border-radius: 50px;
+				}
+
+				&:hover{
+					border-color: $white;
 				}
 			}
 		}
 	}
 }
 
+
+
+
+
 @media all and (max-width: 600px){
-	.landing{
-		width: 80%;
-		border: 0;
-		position: relative;
-		top: 0;
-		margin: 0 auto;
-		padding: 50px 0 0;
-		left: 0;
-		transform: translate(0,0);
-		-webkit-transform: translate(0,0);
-		-moz-transform: translate(0,0);
+
+	.landing-background{ 
+		overflow: auto;
+
+		.landing-overlay{
+			overflow: auto;
+		}
+
+		.landing{
+			width: 80%;
+			border: 0;
+			position: relative;
+			top: 0;
+			margin: 0 auto;
+			padding: 50px 0 0;
+			left: 0;
+			transform: translate(0,0);
+			-webkit-transform: translate(0,0);
+			-moz-transform: translate(0,0);
+		}
 	}
 }
 
