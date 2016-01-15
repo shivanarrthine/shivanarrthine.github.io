@@ -112,6 +112,12 @@
 			transform: translate(0,0);
 			-webkit-transform: translate(0,0);
 			-moz-transform: translate(0,0);
+
+			ul.social-links{
+				li{
+					margin: 0;
+				}
+			}
 		}
 	}
 }
