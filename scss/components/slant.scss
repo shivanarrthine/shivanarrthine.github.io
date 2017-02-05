@@ -32,6 +32,19 @@
 	}
 }
 
+@media all and (max-height: 600px) and (min-width: 1025px){
+	.slant{
+		position: relative;
+	}
+}
+
+@media all and (min-width: 601px) and (max-width: 1024px){
+	.slant{
+		height: 20vh;
+		position: relative;
+	}
+}
+
 @media all and (max-width: 600px){
 
 	.slant{

@@ -1,3 +1,36 @@
+@font-face {
+  font-family: "Avenir-Roman";
+  src: url("../../public/fonts/Avenir-Roman.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url("../../public/fonts/Avenir-Medium.ttf");
+  font-weight: normal; }
+
+@font-face {
+  font-family: "Avenir-Book";
+  src: url("../../public/fonts/AvenirLTStd-Book.otf");
+  font-weight: normal; }
+
+h1 {
+  font-size: 30px;
+  font-family: "Avenir-Medium";
+  line-height: 40px; }
+
+p {
+  font-size: 16px;
+  font-family: "Avenir-Book";
+  line-height: 22px;
+  margin-bottom: 20px; }
+
+@media all and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+    line-height: 30px; }
+  p {
+    font-size: 15px; } }
+
 * {
   box-sizing: border-box; }
 
@@ -8,7 +41,7 @@ body {
   position: relative;
   background: #fff;
   color: #4a4a4a;
-  font-family: "Avenir", Arial, Helvetica, sans-serif;
+  font-family: "Avenir-Roman", Arial, Helvetica, sans-serif;
   font-weight: 400;
   box-sizing: border-box;
   height: 100%; }
@@ -17,23 +50,6 @@ body {
   width: 80%;
   max-width: 1080px;
   margin: 0 auto; }
-
-h1 {
-  font-size: 30px;
-  font-family: "Avenir-Medium";
-  line-height: 40px; }
-
-p {
-  font-size: 16px;
-  line-height: 22px;
-  margin-bottom: 20px; }
-
-@media all and (max-width: 600px) {
-  h1 {
-    font-size: 24px;
-    line-height: 30px; }
-  p {
-    font-size: 15px; } }
 
 .button {
   padding: 14px 25px;
@@ -82,7 +98,8 @@ p {
 
 @media all and (min-width: 601px) and (max-width: 1024px) {
   .hero {
-    width: 60%; } }
+    width: 60%;
+    min-height: 80vh; } }
 
 @media all and (max-width: 600px) {
   .hero {
@@ -121,6 +138,15 @@ p {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; }
+
+@media all and (max-height: 600px) and (min-width: 1025px) {
+  .slant {
+    position: relative; } }
+
+@media all and (min-width: 601px) and (max-width: 1024px) {
+  .slant {
+    height: 20vh;
+    position: relative; } }
 
 @media all and (max-width: 600px) {
   .slant {
