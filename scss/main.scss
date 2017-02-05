@@ -1,3 +1,8 @@
 
-@import "base";
-@import "landing";
+@import "base/base";
+@import "base/typography";
+
+@import "elements/buttons";
+
+@import "components/hero";
+@import "components/slant";

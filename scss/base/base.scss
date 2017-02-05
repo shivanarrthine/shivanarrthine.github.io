@@ -1,0 +1,25 @@
+@import "base/variables";
+
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+}
+
+body{
+	position: relative;
+	background: $white;
+	color: $dark-text;
+	font-family: "Avenir", Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.container{
+	width: 80%;
+	max-width: 1080px;
+	margin: 0 auto;
+}

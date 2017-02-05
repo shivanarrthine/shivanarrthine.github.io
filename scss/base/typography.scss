@@ -1,0 +1,28 @@
+@import "base/variables";
+
+h1{
+	font-size: 30px;
+	font-family: "Avenir-Medium";
+	line-height: 40px;
+}
+
+p{
+	font-size: 16px;
+	line-height: 22px;
+	margin-bottom: 20px;
+}
+
+
+
+@media all and (max-width: 600px){
+
+	h1{
+		font-size: 24px;
+		line-height: 30px;
+	}
+
+	p{
+		font-size: 15px;
+	}
+
+}
