@@ -8,7 +8,7 @@
 body{
   background-color: var(--primary-color);
   color: white;
-  font-family: "Circular Std", Arial, Helvetica, sans-serif;
+  font-family: "Circular Std", Avenir, Arial, Helvetica, sans-serif;
   font-weight: 400;
   animation: background-transition 10s infinite;
 }
@@ -197,8 +197,6 @@ ul.links-block li a{
     width: 100%;
   }
 }
-
-
 
 
 
