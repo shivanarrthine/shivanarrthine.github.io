@@ -87,7 +87,7 @@ a{
   z-index: -1;
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
-  border-bottom: 18vh solid var(--tertiary-color);
+  border-bottom: 15vh solid var(--tertiary-color);
 }
 
 
@@ -123,7 +123,7 @@ a{
 
 .intro-block p{
   width: 67%;
-  margin: 0 auto 40px;
+  margin: 0 auto 60px;
 }
 
 
@@ -205,7 +205,6 @@ ul.links-block li a:hover{
   /* blocks */
   .intro-block{
     align-self: start;
-    /* margin-top: 20vh; */
     width: 100vw;
   }
 
