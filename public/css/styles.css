@@ -168,7 +168,7 @@ a{
 
 .intro-block .button{
   opacity: 0;
-  animation: expand 0.7s forwards 3s;
+  animation: expand 0.7s forwards 2s;
 }
 
 
