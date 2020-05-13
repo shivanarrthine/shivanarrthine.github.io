@@ -1,16 +1,17 @@
 :root {
-  --primary-color: #7A8592;
+  --primary-color: #3A7FF3;
+  --secondary-color: #2E6FDD;
+  --tertiary-color: #2462CC;
 }
 
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:900|Open+Sans:600&display=swap'); */
 
 body{
+  position: relative;
   background-color: var(--primary-color);
   color: white;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 14px;
-  /*animation: background-transition 20s infinite;*/
 }
 
 
@@ -49,7 +50,46 @@ a{
   border-bottom: 2px solid rgba(255,255,255,0.4);
 }
 
+.button{
+  display: inline-block;
+  background:rgba(255,255,255,0.4);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
 
+.button:hover{
+  background: white;
+  color: var(--secondary-color);
+}
+
+
+
+
+/* background */
+
+.bg-right{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50vw;
+  height: 100vh;
+  background: var(--secondary-color);
+  z-index: -1;
+}
+
+.bg-bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 15vh solid var(--tertiary-color);
+}
 
 
 /* grid */
@@ -62,21 +102,73 @@ a{
   margin: 0 auto;
 }
 
+.grid__primary{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid__footer{
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
+}
+/* keyframes */
+
+@keyframes appear{
+  0%{
+    opacity: 0;
+    /* transform: scale(0.8) translate(0, -200px); */
+  }
+  100%{
+    opacity: 1;
+    /* transform: scale(1) translate(0, 0); */
+  }
+}
+
+@keyframes expand{
+  0%{
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  50%{
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* blocks */
 .intro-block{
   align-self: start;
-  margin-top: 20vh;
+  margin: auto;
   width: 40vw;
+  text-align: center;
+}
+
+.intro-block h1{
+  opacity: 0;
+  animation: appear 3s forwards;
+}
+
+.intro-block h2{
+  opacity: 0;
+  animation: appear 3s forwards 0.5s;
 }
 
 .intro-block p{
   width: 67%;
+  margin: 0 auto 40px;
+  opacity: 0;
+  animation: appear 3s forwards 1s;
+}
+
+.intro-block .button{
+  opacity: 0;
+  animation: expand 0.7s forwards 2s;
 }
 
 
@@ -91,7 +183,7 @@ ul.links-block{
 ul.links-block li{
   list-style: none;
   display: inline-flex;
-  margin-right: 2rem;
+  margin: 0 2rem;
 }
 
 ul.links-block li a{
@@ -107,15 +199,45 @@ ul.links-block li a:hover{
 
 /* responsive */
 
+@media all and (min-width: 2560px){
+  .intro-block{
+    width: 20vw;
+  }
+}
+
 @media all and (max-width: 1024px){
   .intro-block{
     width: 60vw;
   }
+
 }
 
 @media all and (max-width: 600px){
   h1, h2{
     font-size: 2.3rem;
+  }
+
+  /* background */
+  .bg-right{
+    position: fixed;
+    top: 0;
+    left: 50vw;
+    width: 50vw;
+    height: 100vh;
+    background: var(--secondary-color);
+    z-index: -1;
+  }
+  
+  .bg-bottom{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-bottom: 10vh solid var(--tertiary-color);
   }
 
   /* grid */
@@ -128,7 +250,6 @@ ul.links-block li a:hover{
   /* blocks */
   .intro-block{
     align-self: start;
-    margin-top: 20vh;
     width: 100vw;
   }
 
@@ -138,7 +259,7 @@ ul.links-block li a:hover{
 
   ul.links-block{
     width: 80vw;
-    margin: 0 auto;
+    margin: 20px auto 0;
     justify-content: space-between;
   }
 
