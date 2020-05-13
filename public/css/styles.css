@@ -4,6 +4,9 @@
   --tertiary-color: #2462CC;
 }
 
+*{
+  box-sizing: border-box;
+}
 
 body{
   position: relative;
@@ -219,24 +222,25 @@ ul.links-block li a:hover{
 
   /* background */
   .bg-right{
+    /* display: none; */
     position: fixed;
     top: 0;
-    left: 50vw;
-    width: 50vw;
+    left: 80vw;
+    width: 20vw;
     height: 100vh;
     background: var(--secondary-color);
-    z-index: -1;
+    border-bottom: 10vh solid var(--tertiary-color);
   }
   
   .bg-bottom{
     position: fixed;
-    bottom: 0;
+    bottom: 0vh;
     left: 0;
     width: 0;
     height: 0;
     z-index: -1;
-    border-left: 50vw solid transparent;
-    border-right: 50vw solid transparent;
+    border-left: 80vw solid transparent;
+    border-right: 0 solid transparent;
     border-bottom: 10vh solid var(--tertiary-color);
   }
 
