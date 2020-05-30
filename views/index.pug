@@ -1,5 +1,69 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  .container
+
+    header.header
+      .header__content
+        h1
+          | Hi, I'm Shiva. 
+          br
+          | I design digital experiences.
+        p
+          | I'm a product designer with experience in UI/UX design and front-end development.
+        p
+          | Currently exploring the blockchain space with Perlin. 
+          br
+          | Formerly with McKinsey & Company, VLT Labs, and co-founded two startups.
+
+        a(href="#work") View my work
+
+    
+    section#work.section
+      .section__header
+        h3 Building digital products, globally.
+        p I’ve worked with organisations big and small across multiple countries to design, build, and launch digital products.
+      
+      .section__content
+        .grid-projects
+          a.link.link--locked
+            h4 Designing a scheduling dashboard powered by advanced analytics
+            p Australia
+            img.link__icon(src="/images/lock.svg")
+
+          a.link.link--locked
+            h4 Using design thinking to help a F&amp;B chain digitize their experience
+            p Thailand
+            img.link__icon(src="/images/lock.svg")
+          
+          a.link(href="")
+            h4 Designing a simple and convenient mobile banking experience
+            p Bank Sinarmas, Indonesia
+            img.link__icon(src="/images/arrow-right.svg")
+
+          a.link(href="")
+            h4 Helping startups design, build, and launch MVPs
+            p Various startups in Malaysia
+            img.link__icon(src="/images/arrow-right.svg")
+
+        .block-highlight
+          .block-highlight__content
+            h4 Err, why are some projects locked?
+            p 
+              | I've worked on a number of confidential projects which can't be publicly displayed. 
+              br
+              | Get in touch if you're interested to learn more about my work.
+
+
+    section#contact.section
+      .section__header
+        h3 Get in touch
+        p Drop a mail or connect on social platforms
+
+      .section__content
+        p buttons
+
+          
+
+          
