@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #3A7FF3;
-  --secondary-color: #2E6FDD;
+  --primary-color: #2E6FDD;
+  --secondary-color: #3A7FF3;
   --tertiary-color: #2462CC;
 }
 
@@ -65,6 +65,7 @@ a:hover{
 /* background */
 
 .bg-right{
+  display: none;
   position: absolute;
   top: 0;
   left: 50%;
@@ -208,6 +209,7 @@ ul.links-block li a:hover{
 
 }
 
+/* responsive mobile */
 @media all and (max-width: 600px){
   h1, h2{
     font-size: 2.3rem;
@@ -224,9 +226,9 @@ ul.links-block li a:hover{
   
   .bg-bottom{
     position: fixed;
-    border-left: 80vw solid transparent;
+    border-left: 100vw solid transparent;
     border-right: 0 solid transparent;
-    border-bottom: 10vh solid var(--tertiary-color);
+    border-bottom: 25vh solid var(--tertiary-color);
   }
 
 
@@ -234,8 +236,8 @@ ul.links-block li a:hover{
   /* grid */
   .grid{
     width: 90vw;
-    height: 100%;
     min-height: -webkit-fill-available; /* Fix for Safari mobile */
+    min-height: 100%;
   }
 
   .grid__footer{
