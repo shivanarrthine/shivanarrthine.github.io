@@ -1,7 +1,8 @@
 # shivanarrthine.github.io
 
 
+To compile sass files:
 ```
 npm install
-npm start
+npm run watch-css
 ```

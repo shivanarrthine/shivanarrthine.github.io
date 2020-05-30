@@ -4,25 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "build-css": "node-sass --include-path scss public/sass/style.sass public/css/style.css",
+    "watch-css": "nodemon -e sass -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shivanarrthine/shivanarrthine.github.io.git"
   },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
-    "node-sass-middleware": "0.11.0",
-    "pug": "2.0.0-beta11"
-  },
+  "dependencies": {},
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/shivanarrthine/shivanarrthine.github.io/issues"
   },
-  "homepage": "https://github.com/shivanarrthine/shivanarrthine.github.io#readme"
+  "homepage": "https://github.com/shivanarrthine/shivanarrthine.github.io#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4"
+  }
 }
