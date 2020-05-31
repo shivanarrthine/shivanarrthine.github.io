@@ -1,0 +1,84 @@
+
+.social
+    display: flex
+    align-items: center
+
+    &__email
+        position: relative
+        margin-right: 2rem
+        
+        input
+            position: absolute
+            opacity: 0
+            z-index: -1
+
+        .tooltip
+            position: absolute
+            top: -3.5rem
+            left: calc(50% - 58px)
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            background: $color-background-secondary
+            padding: 1rem 2rem
+            border-radius: 0.25rem
+            font-size: $font-size-sm
+            font-weight: $font-weight-sbold
+            transition: all 0.3s ease
+            opacity: 0
+            transform: translateY(30px) scale(0.3)
+
+            &.show
+                opacity: 1
+                transform: translateY(0) scale(1)
+
+            &:before
+                content: ""
+                position: absolute
+                bottom: -8px
+                left: calc(50% - 10px)
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 8px solid $color-background-secondary;
+
+    li:not(.social__email)
+        position: relative
+        margin-right: 1rem
+        width: 3rem
+        height: 3rem
+        padding: 0.8rem
+
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -1
+            width: 3rem
+            height: 3rem
+            background: $color-background-secondary
+            border-radius: 100%
+            transform: scale(0.2)
+            opacity: 0
+            transition: all 0.3s ease
+        
+        svg
+            fill: $color-text-default
+
+        &:hover
+            &::before
+                transform: scale(1.2)
+                opacity: 1
+
+
+// Mobile devices
+@media all and (max-width: $breakpoint-mobile)
+    .social
+        display: grid
+        grid-template-columns: repeat(4, 40px)
+        grid-template-rows: auto auto
+        grid-gap: 1rem
+
+        &__email
+            grid-column-start: 1
+            grid-column-end: 5

@@ -1,0 +1,25 @@
+.banner
+    background: $color-background-secondary
+    border-radius: 0.5rem
+    padding: 2rem
+
+    &__content
+        width: 70%
+
+        p
+            font-size: $font-size-sm
+            margin: 0
+
+
+// Mobile devices
+@media all and (max-width: $breakpoint-mobile)
+    .banner
+        &__content
+            width: 100%
+
+
+// Tablet (portrait and landscape) devices
+@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-l)
+    .banner
+        &__content
+            width: 90%

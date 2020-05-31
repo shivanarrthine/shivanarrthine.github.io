@@ -1,0 +1,44 @@
+.nav
+    padding: 1rem 0
+
+    .container
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &__logo
+        display: block
+        opacity: 0.3
+        transition: all 0.3s ease
+
+        &:hover
+            opacity: 1
+
+        h3
+            font-weight: $font-weight-xbold
+
+    &__links
+        display: flex
+        justify-content: flex-end
+        align-items: center
+
+        li
+            margin-left: 5rem
+
+            a 
+                font-size: $font-size-xs
+                text-transform: uppercase
+                opacity: 0.5
+                transition: all 0.3s ease
+
+                &:hover
+                    opacity: 1
+
+
+// Mobile, Tablet (portrait) devices
+@media all and (max-width: $breakpoint-tablet-p)
+    .nav
+        &__links
+            li:not(.theme)
+                display: none
+
