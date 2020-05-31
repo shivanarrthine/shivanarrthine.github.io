@@ -6,15 +6,20 @@ var darkThemePath = "/public/css/dark.css";
 
 $(document).ready(function(){
 
+    // init AOS
+    AOS.init({
+        once: true
+    });
+
     // detect if there is an existing theme selection
     currentTheme = localStorage.getItem("currentTheme");
 
     console.log("Current theme is " +currentTheme);
 
-    if(currentTheme === "light"){
+    if(currentTheme === "dark"){
         // change toggle to dark and change theme
-        $("#themeSwitcher").attr("checked", true)
-        switchToLightTheme()
+        $("#themeSwitcher").attr("checked", false)
+        switchToDarkTheme()
     }
 
     // detect toggle interaction
@@ -28,8 +33,8 @@ function toggleTheme(){
     currentTheme = localStorage.getItem("currentTheme");
     if(!currentTheme){
         // default to dark
-        currentTheme = "dark";
-        console.log("defaulted to dark")
+        currentTheme = "light";
+        console.log("defaulted to light")
     }
     
     if(currentTheme === "light"){

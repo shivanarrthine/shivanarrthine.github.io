@@ -87,6 +87,21 @@ a {
   h1 {
     font-size: 2.5rem; } }
 
+.linkArrow {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem; }
+  .linkArrow span {
+    font-family: "Montserrat";
+    font-size: 0.75rem;
+    text-transform: uppercase; }
+  .linkArrow svg {
+    margin-left: 1rem;
+    transform: translateX(0px);
+    transition: all 0.3s ease; }
+  .linkArrow:hover svg {
+    transform: translateX(8px); }
+
 .toggle {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -521,20 +536,6 @@ a {
     grid-gap: 4rem;
     margin-top: 6rem;
     padding-left: 1.5rem; }
-  .CollectionLayout__link {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 1rem; }
-    .CollectionLayout__link span {
-      font-family: "Montserrat";
-      font-size: 0.75rem;
-      text-transform: uppercase; }
-    .CollectionLayout__link svg {
-      margin-left: 1rem;
-      transform: translateX(0px);
-      transition: all 0.3s ease; }
-    .CollectionLayout__link:hover svg {
-      transform: translateX(8px); }
 
 @media all and (max-width: 480px) {
   .CollectionLayout {
@@ -559,3 +560,5 @@ a {
 @media all and (min-width: 769px) and (max-width: 1024px) {
   .CollectionLayout__grid {
     padding-left: 0; } }
+
+/*# sourceMappingURL=../../scss/dark.css.map */

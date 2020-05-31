@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "node-sass --include-path --source-map scss public/sass/light-theme.sass public/css/light.css && node-sass --include-path scss public/sass/dark-theme.sass public/css/dark.css",
+    "build-css": "node-sass --include-path --source-map scss public/sass/light-theme.sass public/css/light.css && node-sass --include-path --source-map scss public/sass/dark-theme.sass public/css/dark.css",
     "watch-css": "nodemon -e sass -x \"npm run build-css\""
   },
   "repository": {
