@@ -1,7 +1,7 @@
 
 var currentTheme;
-var lightThemePath = "/public/css/light.css";
-var darkThemePath = "/public/css/dark.css";
+var lightThemePath = "/public/css/light.min.css";
+var darkThemePath = "/public/css/dark.min.css";
 
 
 $(document).ready(function(){

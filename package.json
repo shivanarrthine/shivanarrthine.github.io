@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build-css": "node-sass --include-path --source-map scss public/sass/light-theme.sass public/css/light.css && node-sass --include-path --source-map scss public/sass/dark-theme.sass public/css/dark.css",
-    "watch-css": "nodemon -e sass -x \"npm run build-css\""
+    "post-css": "npx postcss public/css/light.css --use autoprefixer cssnano -o public/css/light.min.css && npx postcss public/css/dark.css --use autoprefixer cssnano -o public/css/dark.min.css",
+    "watch-css": "nodemon -e sass -x \"npm run build-css && npm run post-css\""
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,10 @@
   },
   "homepage": "https://github.com/shivanarrthine/shivanarrthine.github.io#readme",
   "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "cssnano": "^4.1.10",
     "node-sass": "^4.14.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "postcss-cli": "^7.1.1"
   }
 }
