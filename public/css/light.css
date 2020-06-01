@@ -446,7 +446,7 @@ a {
     transition: all 0.5s ease; }
   .ProjectItem--locked {
     opacity: 0.3; }
-  .ProjectItem:hover:not(.link--locked) .ProjectItem__icon {
+  .ProjectItem:hover:not(.ProjectItem--locked) .ProjectItem__icon {
     right: -10px; }
 
 .ProjectLayout {
