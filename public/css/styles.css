@@ -312,32 +312,6 @@ a {
       position: absolute;
       opacity: 0;
       z-index: -1; }
-    .social__email .tooltip {
-      position: absolute;
-      top: -3.5rem;
-      left: calc(50% - 58px);
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      background: var(--color-background-secondary);
-      padding: 1rem 2rem;
-      border-radius: 0.25rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      opacity: 0;
-      transform: translateY(30px) scale(0.3); }
-      .social__email .tooltip.show {
-        opacity: 1;
-        transform: translateY(0) scale(1); }
-      .social__email .tooltip:before {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        left: calc(50% - 10px);
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 8px solid var(--color-background-secondary); }
   .social li:not(.social__email) {
     position: relative;
     margin-right: 1rem;
