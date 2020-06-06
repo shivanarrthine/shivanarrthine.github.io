@@ -2,13 +2,30 @@
   box-sizing: border-box; }
 
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  --color-background: #fff;
+  --color-background-secondary: #f2f2f2;
+  --color-text-default: #111;
+  --color-text-body: #444;
+  --color-text-secondary: #888; }
+  html.light {
+    --color-background: #fff;
+    --color-background-secondary: #f2f2f2;
+    --color-text-default: #111;
+    --color-text-body: #444;
+    --color-text-secondary: #888; }
+  html.dark {
+    --color-background: #222;
+    --color-background-secondary: #383838;
+    --color-text-default: #fff;
+    --color-text-body: rgba(255, 255, 255, 0.9);
+    --color-text-secondary: rgba(255, 255, 255, 0.5); }
 
 body {
-  background-color: #fff;
+  background-color: var(--color-background);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
-  color: #111; }
+  color: var(--color-text-default); }
 
 .container {
   width: 70vw;
@@ -19,6 +36,22 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   column-gap: 10%; }
+
+@media (preferes-color-scheme: light), (prefers-color-scheme: no-preference) {
+  html {
+    --color-background: #fff;
+    --color-background-secondary: #f2f2f2;
+    --color-text-default: #111;
+    --color-text-body: #444;
+    --color-text-secondary: #888; } }
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --color-background: #222;
+    --color-background-secondary: #383838;
+    --color-text-default: #fff;
+    --color-text-body: rgba(255, 255, 255, 0.9);
+    --color-text-secondary: rgba(255, 255, 255, 0.5); } }
 
 @media all and (max-width: 480px) {
   .container {
@@ -72,13 +105,13 @@ h4 {
 p {
   font-size: 1rem;
   font-weight: 400;
-  color: #444;
+  color: var(--color-text-body);
   line-height: 1.8;
   margin-bottom: 1rem;
   letter-spacing: -0.2px; }
 
 a {
-  color: #111;
+  color: var(--color-text-default);
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none; }
@@ -102,44 +135,6 @@ a {
   .linkArrow:hover svg {
     transform: translateX(8px); }
 
-.toggle {
-  appearance: none;
-  width: 62px;
-  height: 32px;
-  display: inline-block;
-  position: relative;
-  border-radius: 50px;
-  overflow: hidden;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  background: rgba(17, 17, 17, 0.1);
-  transition: background-color ease 0.3s; }
-  .toggle::before {
-    content: url("/public/images/icons/moon.svg");
-    display: block;
-    position: absolute;
-    z-index: 2;
-    width: 24px;
-    height: 24px;
-    background: #fff;
-    left: 4px;
-    top: 4px;
-    border-radius: 50%;
-    text-indent: 4px;
-    line-height: 32px;
-    word-spacing: 37px;
-    color: #fff;
-    white-space: nowrap;
-    transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
-  .toggle:checked {
-    background-color: #f2f2f2;
-    border-color: #fff; }
-    .toggle:checked::before {
-      left: 32px;
-      content: url("/public/images/icons/sun.svg");
-      background: #d9d9d9; }
-
 .backButton {
   display: inline-block;
   transform: translateX(-6px); }
@@ -148,7 +143,7 @@ a {
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: #f2f2f2;
+    background-color: var(--color-background-secondary);
     border-radius: 100%;
     transform: scale(0.1);
     opacity: 0;
@@ -167,8 +162,8 @@ a {
   height: 3rem;
   padding: 0 1.5rem;
   background-color: transparent;
-  color: #111;
-  border: 2px solid #111;
+  color: var(--color-text-default);
+  border: 2px solid var(--color-text-default);
   outline: none;
   border-radius: 0.5rem;
   font-family: "Montserrat";
@@ -176,8 +171,8 @@ a {
   text-transform: uppercase;
   transition: all 0.3s ease; }
   .button:hover, .button.active {
-    background-color: #111;
-    color: #fff; }
+    background-color: var(--color-text-default);
+    color: var(--color-background); }
 
 .nav {
   padding: 1rem 0; }
@@ -285,10 +280,10 @@ a {
   padding: 1rem 0;
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(17, 17, 17, 0.3); }
+  color: rgba(var(--color-text-default), 0.3); }
 
 .banner {
-  background: #f2f2f2;
+  background: var(--color-background-secondary);
   border-radius: 0.5rem;
   padding: 2rem; }
   .banner__content {
@@ -322,7 +317,7 @@ a {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      background: #f2f2f2;
+      background: var(--color-background-secondary);
       padding: 1rem 2rem;
       border-radius: 0.25rem;
       font-size: 0.875rem;
@@ -340,7 +335,7 @@ a {
         left: calc(50% - 10px);
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-top: 8px solid #f2f2f2; }
+        border-top: 8px solid var(--color-background-secondary); }
   .social li:not(.social__email) {
     position: relative;
     margin-right: 1rem;
@@ -355,13 +350,13 @@ a {
       z-index: -1;
       width: 3rem;
       height: 3rem;
-      background: #f2f2f2;
+      background: var(--color-background-secondary);
       border-radius: 100%;
       transform: scale(0.2);
       opacity: 0;
       transition: all 0.3s ease; }
     .social li:not(.social__email) svg {
-      fill: #111; }
+      fill: var(--color-text-default); }
     .social li:not(.social__email):hover::before {
       transform: scale(1.2);
       opacity: 1; }
@@ -379,13 +374,14 @@ a {
 .CollectionItem__content {
   width: 90%; }
   .CollectionItem__content .client {
+    color: var(--color-text-secondary);
     margin-top: 0.5rem; }
 
 .CollectionItem__image {
   width: 100%;
   height: 25rem;
   border-radius: 0.5rem;
-  background: #f2f2f2;
+  background: var(--color-background-secondary);
   margin-bottom: 2.5rem;
   background-repeat: no-repeat; }
   .CollectionItem__image.feature--nf {
@@ -433,7 +429,7 @@ a {
     width: 80%; }
   .ProjectItem p {
     font-size: 0.875rem;
-    color: #888;
+    color: var(--color-text-secondary);
     line-height: 1; }
   .ProjectItem__icon {
     position: absolute;
@@ -446,6 +442,44 @@ a {
     opacity: 0.3; }
   .ProjectItem:hover:not(.ProjectItem--locked) .ProjectItem__icon {
     right: -10px; }
+
+.ThemeToggle {
+  appearance: none;
+  width: 62px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: var(--color-background-secondary);
+  transition: background-color ease 0.3s; }
+  .ThemeToggle::before {
+    content: url("/public/images/icons/moon.svg");
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    background: var(--color-background);
+    left: 4px;
+    top: 4px;
+    border-radius: 50%;
+    text-indent: 4px;
+    line-height: 32px;
+    word-spacing: 37px;
+    color: #fff;
+    white-space: nowrap;
+    transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s; }
+  .ThemeToggle:checked {
+    background-color: var(--color-background-secondary);
+    border-color: var(--color-background); }
+    .ThemeToggle:checked::before {
+      left: 32px;
+      content: url("/public/images/icons/sun.svg");
+      background: var(--color-background); }
 
 .ProjectLayout {
   padding: 6rem 0;
@@ -461,7 +495,7 @@ a {
   .ProjectLayout__content {
     grid-area: content; }
   .ProjectLayout__client {
-    color: #888;
+    color: var(--color-text-secondary);
     font-size: 0.875rem;
     margin: 1rem 0 2.5rem; }
   .ProjectLayout__desc {
@@ -520,7 +554,7 @@ a {
   .CollectionLayout__title {
     margin-top: 1.5rem; }
   .CollectionLayout__client {
-    color: #888;
+    color: var(--color-text-secondary);
     font-size: 0.875rem;
     margin: 1rem 0 1.5rem;
     line-height: 1.2; }

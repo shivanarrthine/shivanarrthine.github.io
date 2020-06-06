@@ -1,7 +1,5 @@
 
 var currentTheme;
-var lightThemePath = "/public/css/light.min.css";
-var darkThemePath = "/public/css/dark.min.css";
 
 
 $(document).ready(function(){
@@ -13,8 +11,6 @@ $(document).ready(function(){
 
     // detect if there is an existing theme selection
     currentTheme = localStorage.getItem("currentTheme");
-
-    console.log("Current theme is " +currentTheme);
 
     if(currentTheme === "dark"){
         // change toggle to dark and change theme
@@ -34,7 +30,6 @@ function toggleTheme(){
     if(!currentTheme){
         // default to dark
         currentTheme = "light";
-        console.log("defaulted to light")
     }
     
     if(currentTheme === "light"){
@@ -45,20 +40,19 @@ function toggleTheme(){
 }
 
 function switchToDarkTheme(){
-    loadThemeFile(lightThemePath, darkThemePath);
+    // change color variables
+    $('html').addClass('dark');
+    $('html').removeClass('light');
+    // save theme
     saveCurrentTheme("dark");
-
-    console.log("switched to dark theme")
 }
 
 function switchToLightTheme(){
-    loadThemeFile(darkThemePath, lightThemePath);
+    // change color variables
+    $('html').addClass('light');
+    $('html').removeClass('dark')
+    // save theme
     saveCurrentTheme("light");
-    console.log("Switced to light theme")
-}
-
-function loadThemeFile(oldPath, newPath){
-    $("link[href='" + oldPath + "']").attr('href',newPath);
 }
 
 function saveCurrentTheme(theme){

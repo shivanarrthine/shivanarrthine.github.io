@@ -27,16 +27,6 @@ body {
   font-weight: 400;
   color: var(--color-text-default); }
 
-.container {
-  width: 70vw;
-  margin: 0 auto; }
-
-.grid-projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  column-gap: 10%; }
-
 @media (preferes-color-scheme: light), (prefers-color-scheme: no-preference) {
   html {
     --color-background: #fff;
@@ -74,6 +64,16 @@ body {
 @media all and (min-width: 2560px) {
   .container {
     width: 50vw; } }
+
+.container {
+  width: 70vw;
+  margin: 0 auto; }
+
+.grid-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 10%; }
 
 h1, h2, h3, h4 {
   font-family: "Montserrat"; }
@@ -593,4 +593,4 @@ a {
   .CollectionLayout__grid {
     padding-left: 0; } }
 
-/*# sourceMappingURL=../../scss/dark.css.map */
+/*# sourceMappingURL=../../scss/styles.css.map */

@@ -1,5 +1,5 @@
  
-.toggle
+.ThemeToggle
     appearance: none
     width: 62px
     height: 32px
@@ -10,7 +10,7 @@
     outline: none
     border: none
     cursor: pointer
-    background: rgba($color-text-default, 0.1)
+    background: var(--color-background-secondary)
     transition: background-color ease 0.3s
 
     &::before
@@ -20,7 +20,7 @@
         z-index: 2
         width: 24px
         height: 24px
-        background: $color-background
+        background: var(--color-background)
         left: 4px
         top: 4px
         border-radius: 50%
@@ -32,10 +32,12 @@
         transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s
 
     &:checked
-        background-color: $color-background-secondary
-        border-color: $color-background
+        background-color: var(--color-background-secondary)
+        border-color: var(--color-background)
 
         &::before
             left: 32px
             content: url('/public/images/icons/sun.svg')
-            background: darken($color-background-secondary, 10%)
+            background: var(--color-background)
+
+

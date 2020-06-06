@@ -19,7 +19,7 @@
             display: inline-flex
             justify-content: center
             align-items: center
-            background: $color-background-secondary
+            background: var(--color-background-secondary)
             padding: 1rem 2rem
             border-radius: 0.25rem
             font-size: $font-size-sm
@@ -39,7 +39,7 @@
                 left: calc(50% - 10px)
                 border-left: 10px solid transparent;
                 border-right: 10px solid transparent;
-                border-top: 8px solid $color-background-secondary;
+                border-top: 8px solid var(--color-background-secondary)
 
     li:not(.social__email)
         position: relative
@@ -56,14 +56,14 @@
             z-index: -1
             width: 3rem
             height: 3rem
-            background: $color-background-secondary
+            background: var(--color-background-secondary)
             border-radius: 100%
             transform: scale(0.2)
             opacity: 0
             transition: all 0.3s ease
         
         svg
-            fill: $color-text-default
+            fill: var(--color-text-default)
 
         &:hover
             &::before
