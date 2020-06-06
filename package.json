@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-css": "node-sass --include-path --source-map scss public/sass/application.sass public/css/styles.css",
-    "post-css": "npx postcss public/css/styles.css --use autoprefixer cssnano -o public/css/styles.min.css",
+    "post-css": "npx postcss public/css/styles.css --config postcss.config.js -o public/css/styles.min.css",
     "watch-css": "nodemon -e sass -x \"npm run build-css && npm run post-css\""
   },
   "repository": {
