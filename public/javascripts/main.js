@@ -1,5 +1,10 @@
 
 let currentTheme;
+const isDarkMode = window.matchMedia(`(prefers-color-scheme: dark)`).matches;
+const isLightMode = window.matchMedia(`(prefers-color-scheme: light)`).matches;
+const isNotSpecified = window.matchMedia(`(prefers-color-scheme: no-preference)`).matches;
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified;
+
 
 
 $(document).ready(function(){
@@ -12,23 +17,29 @@ $(document).ready(function(){
     // detect current theme
     let currentTheme = userThemePreference();
 
-    if(currentTheme === "dark"){
-        // change toggle to dark and change theme
-        $("#themeSwitcher").attr("checked", false)
+    // change theme if current theme exists
+    if(currentTheme === "light"){
+        switchToLightTheme()
+    } else if(currentTheme === "dark"){
         switchToDarkTheme()
     }
 
     // detect toggle interaction
     $("#themeSwitcher").on('change', toggleTheme)
 
+    // detect any changes in system preferences
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(e => e.matches && switchToDarkTheme())
+    window.matchMedia("(prefers-color-scheme: light)").addListener(e => e.matches && switchToLightTheme())
+
+
 });
 
 function userThemePreference(){
-    // detect if there is an existing theme selection
-    const localStorageTheme = localStorage.getItem("currentTheme");
     let theme = undefined;
 
-
+    // detect if there is an existing theme selection
+    const localStorageTheme = localStorage.getItem("currentTheme");
+    
     if(localStorageTheme === "light"){
         theme = "light";
     } else if (localStorageTheme === "dark"){
@@ -36,16 +47,19 @@ function userThemePreference(){
     }
 
     // detect system theme preference
-    if (window.matchMedia(`(prefers-color-scheme: dark)`).matches){
+    if (isDarkMode){
         // prefers dark mode if no locally stored preference
         theme = localStorageTheme ? localStorageTheme : "dark";   
-    } else if (window.matchMedia(`(prefers-color-scheme: light)`).matches){
+    } else if (isLightMode){
         // prefers light mode if no locally stored preference
         theme = localStorageTheme ? localStorageTheme : "light"
-    } else if (window.matchMedia(`(prefers-color-scheme: no-preference)`).matches){
+    } else if (isNotSpecified || hasNoSupport){
         // default to light mode if no locally stored preference
         theme = localStorageTheme ? localStorageTheme : "light"
     }
+
+    console.log("locally stored theme: " + localStorageTheme)
+    console.log("selected theme: " + theme)
 
     return theme;
 }
@@ -70,6 +84,8 @@ function switchToDarkTheme(){
     // change color variables
     $('html').addClass('dark');
     $('html').removeClass('light');
+    // ensure toggle is checked
+    $("#themeSwitcher").attr("checked", false)
     // save theme
     saveCurrentTheme("dark");
 }
@@ -78,6 +94,8 @@ function switchToLightTheme(){
     // change color variables
     $('html').addClass('light');
     $('html').removeClass('dark')
+    // ensure toggle is checked
+    $("#themeSwitcher").attr("checked", true)
     // save theme
     saveCurrentTheme("light");
 }
