@@ -58,9 +58,6 @@ function userThemePreference(){
         theme = localStorageTheme ? localStorageTheme : "light"
     }
 
-    console.log("locally stored theme: " + localStorageTheme)
-    console.log("selected theme: " + theme)
-
     return theme;
 }
 

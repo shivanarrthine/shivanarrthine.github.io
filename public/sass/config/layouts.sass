@@ -7,3 +7,33 @@
     grid-template-columns: 1fr 1fr
     grid-template-rows: auto
     column-gap: 10%
+
+    
+// Mobile devices
+@media all and (max-width: $breakpoint-mobile)
+    .container
+        width: 90vw
+
+    .grid-projects
+        grid-template-columns: 1fr
+        column-gap: 0
+
+// Tablet portrait devices
+@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+    .container
+        width: 80vw
+
+    .grid-projects
+        grid-template-columns: 1fr
+        column-gap: 0
+
+// Tablet landscape devices
+@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+    .container
+        width: 80vw
+
+
+// Large desktop monitors
+@media all and (min-width: $breakpoint-desktop-lg)
+    .container
+        width: 50vw
