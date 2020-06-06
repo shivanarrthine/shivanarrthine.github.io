@@ -1,5 +1,5 @@
 
-var currentTheme;
+let currentTheme;
 
 
 $(document).ready(function(){
@@ -9,8 +9,8 @@ $(document).ready(function(){
         once: true
     });
 
-    // detect if there is an existing theme selection
-    currentTheme = localStorage.getItem("currentTheme");
+    // detect current theme
+    let currentTheme = userThemePreference();
 
     if(currentTheme === "dark"){
         // change toggle to dark and change theme
@@ -22,6 +22,33 @@ $(document).ready(function(){
     $("#themeSwitcher").on('change', toggleTheme)
 
 });
+
+function userThemePreference(){
+    // detect if there is an existing theme selection
+    const localStorageTheme = localStorage.getItem("currentTheme");
+    let theme = undefined;
+
+
+    if(localStorageTheme === "light"){
+        theme = "light";
+    } else if (localStorageTheme === "dark"){
+        theme = "dark";
+    }
+
+    // detect system theme preference
+    if (window.matchMedia(`(prefers-color-scheme: dark)`).matches){
+        // prefers dark mode if no locally stored preference
+        theme = localStorageTheme ? localStorageTheme : "dark";   
+    } else if (window.matchMedia(`(prefers-color-scheme: light)`).matches){
+        // prefers light mode if no locally stored preference
+        theme = localStorageTheme ? localStorageTheme : "light"
+    } else if (window.matchMedia(`(prefers-color-scheme: no-preference)`).matches){
+        // default to light mode if no locally stored preference
+        theme = localStorageTheme ? localStorageTheme : "light"
+    }
+
+    return theme;
+}
 
 // Theme switching
 function toggleTheme(){
@@ -62,8 +89,8 @@ function saveCurrentTheme(theme){
 // email copy functionality
 function copyEmail(){
     // get email from hidden input
-    var input = document.getElementById("email")
-    var value = input.select();
+    let input = document.getElementById("email")
+    let value = input.select();
     
     // copy to clipboard
     document.execCommand('copy');
