@@ -308,7 +308,7 @@ a {
   .social__email {
     position: relative;
     margin-right: 2rem; }
-    .social__email input {
+    .social__email input, .social__email label {
       position: absolute;
       opacity: 0;
       z-index: -1; }
