@@ -36,10 +36,12 @@
 
 	<nav class="nav" data-aos="fade-down">
 		<div class="container">
-			<a href="index.html" class="nav__logo">
+			<a href="/" class="nav__logo">
 				<h3>sn.</h3>
 			</a>
 			<ul class="nav__links">
+				<li><a href="/#work">Work</a></li>
+				<li><a href="#contact">Contact</a></li>
 				<li class="theme">
 					<input id="themeSwitcher" class="ThemeToggle" type="checkbox" checked>
 				</li>
@@ -47,80 +49,80 @@
 		</div>
 	</nav>
 
-	<header class="header" data-aos="fade-up" data-aos-duration="1000">
-		<div class="container">
-			<div class="header__content">
-				<h1>
-					Hi, I'm Shiva.<br />
-					I design <span class="highlight-lg">digital experiences</span>.
-				</h1>
-				<p>
-					I'm a product designer with experience in UI/UX design and front-end development.
-				</p>
-				<p>
-					Currently exploring the blockchain space with <a target="_blank" href="https://www.perlin.net/">Perlin</a>.<br />
-					Formerly with McKinsey & Company, VLT Labs, and co-founded two startups.
-				</p>
 
-				<a href="#work" class="header__cta">
-					<span>View my work</span>
-					<svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-				</a>
-			</div>
-		</div>
-	</header>
+	<div class="container CollectionLayout">
+		<header class="CollectionLayout__header" data-aos="fade-up" >
+			<a class="backButton" href="/">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+			</a>
+
+			<h2 class="CollectionLayout__title">Helping startups <span class="highlight">design, build and launch</span> MVPs</h2>
+			<p class="client">Various startups in Malaysia</p>
+
+			<p class="CollectionLayout__desc">
+				Over the years, I've worked with countless startup founders to design and build their products through design sprints and user testing as well as designing and developing the interface and experience of their products.
+			</p>
+
+		</header>
 
 
-	<section id="work" class="section" data-aos="fade-up" data-aos-offset="0">
-		<div class="container">
-			<div class="section__header">
-				<h3>Building digital products, globally.</h3>
-				<p>
-					I've worked with companies in South East Asia, Australia, and the United States to design, build, and launch digital products.
-				</p>
-			</div>
-			<div class="section__content">
-				<div class="grid-projects">
-
-					<a href="/projects/bank-app.html" class="ProjectItem">
-						<h4>Designing a simple and convenient mobile banking experience</h4>
-						<p>Bank Sinarmas, Indonesia</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-					</a>
-
-					<a href="/projects/startups-mvp.html" class="ProjectItem">
-						<h4>Helping startups design, build, and launch MVPs</h4>
-						<p>Various startups in Malaysia</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-					</a>
-
-					<a class="ProjectItem ProjectItem--locked">
-						<h4>Designing a scheduling dashboard powered by machine learning</h4>
-						<p>Australia</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-					</a>
-
-					<a class="ProjectItem ProjectItem--locked">
-						<h4>Identifying digital opportunities through a design thinking process</h4>
-						<p>Thailand</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-					</a>
-				</div>
-
-				<div class="banner">
-					<div class="banner__content">
-						<h4>Err, why are some projects locked?</h4>
-						<p>I've worked on a number of projects in confidential environments and can't publicly present the work done. Get in touch if you are interested to learn more about products I've built.</p>
-					</div>
+		<section class="CollectionLayout__grid">
+			<div class="CollectionItem" data-aos="fade-up">
+				<div class="CollectionItem__image feature--nf"></div>
+				<div class="CollectionItem__content">
+					<h4>Connecting Kuala Lumpur with home-cooked meals</h4>
+					<p class="client">Neighbourfood</p>
+					<p>Designed the mobile app of a food delivery/collection app through a design workshop followed by UI design and user testing sessions. The app was paired with a customized operations dashboard, an app for the cooks, and a rider app for delivery.</p>
 				</div>
 			</div>
-		</div>
-	</section>
+			
+			<div class="CollectionItem" data-aos="fade-up">
+				<div class="CollectionItem__image feature--cs"></div>
+				<div class="CollectionItem__content">
+					<h4>Empowering online merchants to improve customer relationship</h4>
+					<p class="client">Crowdsails</p>
+					<p>Design and developed the UI of a CRM dashboard that connects online stores with chat platforms to support online merchants by providing them with additional capabilties to manage customers and
+						track sales.</p>
+				</div>
+			</div>
+
+			<div class="CollectionItem" data-aos="fade-up">
+				<div class="CollectionItem__image feature--pm"></div>
+				<div class="CollectionItem__content">
+					<h4>Supporting the local startup scene for Merdeka</h4>
+					<p class="client">Project Merdeka</p>
+					<p>
+						Project Merdeka was a built to support the Malaysian startup scene with over a 100 startups listing promotions to celebrate Independence month. I designed and developed the UI.
+					</p>
+					<a class="linkArrow" href="https://www.thestar.com.my/news/nation/2016/08/07/support-pours-in-for-project-merdeka/" target="_blank">
+						<span>Read the feature on The Star</span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="CollectionItem" data-aos="fade-up">
+				<div class="CollectionItem__image feature--qu"></div>
+				<div class="CollectionItem__content">
+					<h4>Building an online circuit builder to aid quantum computing research</h4>
+					<p class="client">QuCS</p>
+					<p>Developed the front-end of a circuit builder and simulator tool using Fabric.js. The web-based tool was aimed at reducing the cost for researchers in the field of quantum computing by alllowing quick simulation of circuits.</p>
+				</div>
+			</div>
+		</section>
+
+		
+		
+	</div>
+
+
+	
 
 	<section id="contact" class="section" data-aos="fade-up">
 		<div class="container">
 			<div class="section__header">
 				<h3>Let's <span class="highlight">connect</span></h3>
+				<!-- <p>Drop a mail or connect on social platforms.</p> -->
 			</div>
 			<div class="section__content">
 
@@ -159,4 +161,5 @@
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="/public/javascripts/main.js"></script>
 </body>
+	
 </html>

@@ -1,0 +1,29 @@
+{
+  "name": "shivanarrthine.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass --include-path --source-map scss public/sass/application.sass public/css/styles.css",
+    "post-css": "npx postcss public/css/styles.css --use autoprefixer cssnano -o public/css/styles.min.css",
+    "watch-css": "nodemon -e sass -x \"npm run build-css && npm run post-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivanarrthine/shivanarrthine.github.io.git"
+  },
+  "dependencies": {},
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivanarrthine/shivanarrthine.github.io/issues"
+  },
+  "homepage": "https://github.com/shivanarrthine/shivanarrthine.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "postcss-cli": "^7.1.1"
+  }
+}

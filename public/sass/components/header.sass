@@ -1,0 +1,53 @@
+.header
+    padding: 8rem 0
+
+    &__content
+        width: 80%
+
+        p
+            width: 75%
+
+    &__cta
+        margin-top: 2.5rem
+        display: inline-flex
+        align-items: center
+
+        span
+            font-family: $font-family-header
+            font-size: $font-size-xs
+            text-transform: uppercase
+
+        .cta-arrow
+            margin-left: 1rem
+            transform: translateY(0px)
+            transition: all 0.3s ease
+
+        &:hover
+            .cta-arrow
+                transform: translateY(3px)
+
+
+// Mobile devices
+@media all and (max-width: $breakpoint-mobile)
+    .header
+        padding: 4rem 0
+
+        &__content
+            width: 100%
+
+            p
+                width: 100%
+    
+// Tablet portrait devices
+@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+    .header
+        padding: 4rem 0 6rem
+
+        &__content
+            width: 100%
+
+// Tablet landscape devices
+@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+    .header
+        &__content
+            width: 100%

@@ -1,0 +1,29 @@
+
+.ProjectItem
+    position: relative
+    margin-bottom: 2rem
+
+    h4
+        width: 80%
+
+    p
+        font-size: $font-size-sm
+        color: var(--color-text-secondary)
+        line-height: 1
+
+    &__icon
+        position: absolute
+        top: 0
+        right: 0
+        width: 24px
+        height: 24px
+        transition: all 0.5s ease
+
+
+    // states
+    &--locked
+        opacity: 0.3
+
+    &:hover
+        &:not(.ProjectItem--locked) .ProjectItem__icon
+            right: -10px

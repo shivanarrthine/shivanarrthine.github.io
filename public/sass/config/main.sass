@@ -1,0 +1,30 @@
+
+*
+    box-sizing: border-box
+
+html
+    scroll-behavior: smooth
+    @include includeLight
+
+    &.light
+        @include includeLight
+    
+    &.dark
+        @include includeDark
+
+body
+    background-color: var(--color-background)
+    font-family: $font-family-body, Arial, Helvetica, sans-serif
+    font-weight: 400
+    color: var(--color-text-default)
+
+
+// Theme
+@media (preferes-color-scheme: light), (prefers-color-scheme: no-preference)
+    html
+        @include includeLight
+
+@media (prefers-color-scheme: dark)
+    html
+        @include includeDark
+

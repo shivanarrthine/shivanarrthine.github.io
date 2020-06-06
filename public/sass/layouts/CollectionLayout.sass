@@ -1,0 +1,66 @@
+
+.CollectionLayout
+    padding: 6rem 0 10rem
+    
+    &__header
+        width: 70%
+
+    &__title
+        margin-top: 1.5rem
+
+    &__client
+        color: var(--color-text-secondary)
+        font-size: $font-size-sm
+        margin: 1rem 0 1.5rem
+        line-height: 1.2
+
+    &__desc
+        width: 80%
+        padding-left: 1.5rem
+
+    &__grid
+        display: grid;
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: auto
+        grid-gap: 4rem
+        margin-top: 6rem
+        padding-left: 1.5rem
+
+        
+   
+
+// Mobile devices
+@media all and (max-width: $breakpoint-mobile)
+    .CollectionLayout
+        padding: 4rem 0 6rem
+
+        &__header
+            width: 100%
+
+        &__desc
+            width: 90%
+
+        &__grid
+            padding-left: 0
+            grid-template-columns: 1fr
+            margin-top: 3rem
+
+
+// Tablet portrait devices
+@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+    .CollectionLayout
+        &__header
+            width: 100%
+
+        &__grid
+            padding-left: 0
+            grid-template-columns: 1fr
+            margin-top: 3rem
+
+
+
+// Tablet landscape devices
+@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+    .CollectionLayout
+        &__grid
+            padding-left: 0

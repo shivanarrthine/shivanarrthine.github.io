@@ -27,6 +27,16 @@ body {
   font-weight: 400;
   color: var(--color-text-default); }
 
+.container {
+  width: 70vw;
+  margin: 0 auto; }
+
+.grid-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 10%; }
+
 @media (preferes-color-scheme: light), (prefers-color-scheme: no-preference) {
   html {
     --color-background: #fff;
@@ -42,16 +52,6 @@ body {
     --color-text-default: #fff;
     --color-text-body: rgba(255, 255, 255, 0.9);
     --color-text-secondary: rgba(255, 255, 255, 0.5); } }
-
-.container {
-  width: 70vw;
-  margin: 0 auto; }
-
-.grid-projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  column-gap: 10%; }
 
 @media all and (max-width: 480px) {
   .container {
@@ -112,11 +112,9 @@ p {
 
 a {
   color: var(--color-text-default);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
   text-decoration: none; }
-  a:hover {
-    font-weight: 700; }
 
 @media all and (max-width: 768px) {
   h1 {
@@ -595,4 +593,4 @@ a {
   .CollectionLayout__grid {
     padding-left: 0; } }
 
-/*# sourceMappingURL=../../scss/styles.css.map */
+/*# sourceMappingURL=../../scss/dark.css.map */
