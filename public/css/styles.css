@@ -27,7 +27,7 @@ body {
   font-weight: 400;
   color: var(--color-text-default); }
 
-@media (preferes-color-scheme: light), (prefers-color-scheme: no-preference) {
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
   html {
     --color-background: #fff;
     --color-background-secondary: #f2f2f2;
@@ -282,7 +282,7 @@ a {
   padding: 1rem 0;
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(var(--color-text-default), 0.3); }
+  color: var(--color-text-secondary); }
 
 .banner {
   background: var(--color-background-secondary);

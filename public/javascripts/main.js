@@ -6,7 +6,6 @@ const isNotSpecified = window.matchMedia(`(prefers-color-scheme: no-preference)`
 const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified;
 
 
-
 $(document).ready(function(){
 
     // init AOS
@@ -127,3 +126,6 @@ $(document).on('click', 'a[href^="#"]', function (event) {
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 500);
 });
+
+
+// TODO: change to cleaner implementation of theme switching
