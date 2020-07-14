@@ -256,6 +256,14 @@ a {
     width: 60%; }
     .section__header p {
       width: 80%; }
+  .section__divider {
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: 24px auto;
+    grid-template-rows: auto auto;
+    grid-gap: 24px; }
+    .section__divider__content {
+      grid-column: 2 / 3; }
   .section__content {
     margin-top: 4rem; }
   .section:focus {
@@ -406,7 +414,7 @@ a {
   margin-bottom: 2rem; }
   .ProjectItem h4 {
     width: 80%; }
-  .ProjectItem p {
+  .ProjectItem p.company {
     font-size: 0.875rem;
     color: var(--color-text-secondary);
     line-height: 1; }
