@@ -5,6 +5,8 @@ const isLightMode = window.matchMedia(`(prefers-color-scheme: light)`).matches;
 const isNotSpecified = window.matchMedia(`(prefers-color-scheme: no-preference)`).matches;
 const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified;
 
+let isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+
 
 $(document).ready(function(){
 
@@ -120,12 +122,14 @@ function copyEmail(){
 
 // smooth scroll fallback
 $(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
 
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 500);
+    // to avoid conflict with chrome's smoothscroll support
+    if(!isSmoothScrollSupported){
+            event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+    }
 });
-
 
 // TODO: change to cleaner implementation of theme switching
