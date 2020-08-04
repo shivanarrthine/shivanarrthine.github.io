@@ -189,7 +189,8 @@ a {
     .nav__logo:hover {
       opacity: 1; }
     .nav__logo h3 {
-      font-weight: 800; }
+      font-weight: 800;
+      margin: 0; }
   .nav__links {
     display: flex;
     justify-content: flex-end;
