@@ -14,6 +14,8 @@
         background: var(--color-background-secondary)
         margin-bottom: 2.5rem
         background-repeat: no-repeat
+        image-rendering: -webkit-optimize-contrast
+
 
         // feature images
         &.feature--nf
@@ -67,3 +69,10 @@
     .CollectionItem
         &__image
             height: 15rem
+
+// Large desktop monitors
+@media all and (min-width: $breakpoint-desktop-md)
+    .CollectionItem
+        &__image
+            &.feature--nf
+                background-position: center bottom -200px

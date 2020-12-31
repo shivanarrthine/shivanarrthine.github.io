@@ -1,0 +1,56 @@
+
+.CaseStudyLayout
+    padding: 0 0 6rem
+
+    &__header
+        color: #4678F8
+
+    &__steps
+        margin-top: 3rem
+        display: grid;
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 3rem
+        grid-gap: clamp(3rem, 48px, 6rem)
+
+    &__feature
+        margin-top: 6rem
+        padding: 4rem 0
+        background-color: var(--color-background-case)
+        width: 100vw
+        height: 1000px
+        height: clamp(100vh, 1400px, 120vh)
+        overflow: hidden
+        image-rendering: -webkit-optimize-contrast
+
+        &--aok
+            background-image: url('/public/images/projects/aok-screens.png')
+            background-position: center
+            background-size: 70vw
+            background-repeat: no-repeat
+
+
+// Mobile devices
+@media all and (max-width: $breakpoint-tablet-p)
+    .CaseStudyLayout
+        &__steps
+            grid-template-columns: auto
+            grid-template-rows: repeat(3, auto)
+
+        &__feature
+            &--aok
+                background-size: cover
+
+// Tablet landscape devices
+@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+    .CaseStudyLayout
+        &__feature
+            height: 900px
+            &--aok
+                background-size: 80vw
+
+// Large desktop monitors
+@media all and (min-width: $breakpoint-desktop-lg)
+    .CaseStudyLayout
+        &__feature
+            &--aok
+                background-size: 50vw 
