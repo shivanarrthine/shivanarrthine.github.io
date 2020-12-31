@@ -1,0 +1,40 @@
+
+.Step
+    display: block
+    
+    &__count
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 2rem
+        height: 2rem
+        border-radius: 100%
+        background: #4678F8
+        color: white
+        font-weight: $font-weight-sbold
+        font-size: $font-size-sm
+    
+    &__header
+        margin: 1rem 0 0.5rem
+        font-size: $font-size-default
+        width: 70%
+        line-height: 1.5
+
+// Tablet portrait devices
+@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+    .Step
+        display: grid
+        grid-template-columns: 32px auto
+        grid-template-rows: auto auto
+        grid-template-areas: "count header" ". desc";
+        grid-gap: 0.5rem 1rem
+
+        &__count  
+            grid-area: count
+
+        &__header
+            grid-area: header
+            margin: 0
+
+        &__desc
+            grid-area: desc

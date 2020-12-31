@@ -5,6 +5,7 @@ $theme-light-background-secondary: #f2f2f2
 $theme-light-text-default: #111
 $theme-light-text-body: #444
 $theme-light-text-secondary: #888
+$theme-light-background-case: #F3F7FF
 
 // // Dark Theme Colors
 $theme-dark-background: #222
@@ -12,11 +13,13 @@ $theme-dark-background-secondary: #383838
 $theme-dark-text-default: #fff
 $theme-dark-text-body: rgba(#fff,0.9)
 $theme-dark-text-secondary: rgba(#fff,0.5)
+$theme-dark-background-case: rgba(#fff, 0.05)
 
 // Color Tokens using CSS Vars
 @mixin includeLight
     --color-background: #{$theme-light-background}
     --color-background-secondary: #{$theme-light-background-secondary}
+    --color-background-case: #{$theme-light-background-case}
     --color-text-default: #{$theme-light-text-default}
     --color-text-body: #{$theme-light-text-body}
     --color-text-secondary: #{$theme-light-text-secondary}
@@ -24,6 +27,7 @@ $theme-dark-text-secondary: rgba(#fff,0.5)
 @mixin includeDark
     --color-background: #{$theme-dark-background}
     --color-background-secondary: #{$theme-dark-background-secondary}
+    --color-background-case: #{$theme-dark-background-case}
     --color-text-default: #{$theme-dark-text-default}
     --color-text-body: #{$theme-dark-text-body}
     --color-text-secondary: #{$theme-dark-text-secondary}

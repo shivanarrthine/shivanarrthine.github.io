@@ -10,11 +10,10 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/public/css/reset.css" />
 	<link rel="stylesheet" href="/public/css/styles.min.css" />
-	
 	<link rel="stylesheet"href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter&display=swap" rel="stylesheet">
 
 	<link rel="apple-touch-icon-precomposed" href="/public/images/favicon_152.png">
 	<link rel="icon" href="/public/images/favicon.png" sizes="32x32">
@@ -41,7 +40,7 @@
 				<h3>sn.</h3>
 			</a>
 			<ul class="nav__links">
-				<li><a href="#work">Work</a></li>
+				<li><a href="/#work">Work</a></li>
 				<!-- <li><a href="/blog" target="_blank">Blog</a></li> -->
 				<li><a href="#contact">Contact</a></li>
 				<li class="theme" aria-hidden="true">
@@ -51,82 +50,61 @@
 		</div>
 	</nav>
 
-	<header class="header" data-aos="fade-up" data-aos-duration="1000">
-		<div class="container">
-			<div class="header__content">
-				<h1>
-					Hi, I'm Shiva.<br />
-					I design digital experiences.
-				</h1>
-				<p>
-					I'm a product designer with experience in UI/UX design and UI development.
-				</p>
-				<p>
-					Currently exploring the blockchain & DeFi space with <a href="https://www.perlin.net/" target="_blank" rel="noreferrer noopener">Perlin</a>.<br />
-					Formerly with McKinsey & Company, VLT Labs, and co-founded two startups.
-				</p>
 
-				<a href="#work" class="header__cta">
-					<span>View my work</span>
-					<svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><title>Icon Chevron Down</title><polyline points="6 9 12 15 18 9"></polyline></svg>
-				</a>
-			</div>
+	<div class="container ProjectLayout">
+		<div class="ProjectLayout__nav" data-aos="fade-up">
+			<a class="backButton" href="/">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><title>Icon Back</title><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+			</a>
 		</div>
-	</header>
+		<header class="ProjectLayout__content" data-aos="fade-up" data-aos-duration="700">
+			<h2 class="ProjectLayout__title">Designing a secure way to present medical information</h2>
+			<p class="ProjectLayout__client">AOKpass, Singapore</p>
+
+			<p class="ProjectLayout__desc">
+				I worked on designing the UI/UX of AOKpass - an app that allows users to securely present medical information using blockchain technology.
+				<br /><br />
+				With Covid-19 vaccinations being developed and a lot of places requiring workers to be tested, the AOKpass team was looking at a way for users to securely share their medical status without having to sacrifice their privacy. 
+				<br /><br />
+                Key to this solution was to utilise blockchain technology to create a decentralised yet secure solution to storing medical records. 
+                <br /><br />
+                I designed a mobile app where users can create a profile, store medical records, and present their passes as required. The mobile app interfaces with the underlying blockchain technology and connects with the attesters (doctors / medical labs) for them to verify the records - all without the users medical info leaving their device. 
+			</p>
+		</header>
+
+		<section class="ProjectLayout__feature feature--aok" data-aos="fade-up" data-aos-duration="1000">
+		</section>
+    </div>
+    
+    <section class="CaseStudyLayout" >
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <h5 class="CaseStudyLayout__header">Overview of the process</h5>
+
+            <div class="CaseStudyLayout__steps">
+                <div class="Step">
+                    <div class="Step__count">1</div>
+                    <h4 class="Step__header">Understanding overall user journey and user needs</h4>
+                    <p class="Step__desc">We identified 3 key users and looked at the overall user journey to understand offline flows and how the different users interacted. The experience of getting a medical record attested is a largely offline experience, therefore it was a primary consideration in designing this app.</p>
+                </div>
+                <div class="Step">
+                    <div class="Step__count">2</div>
+                    <h4 class="Step__header">Building a POC and gathering initial feedback</h4>
+                    <p class="Step__desc">We focused on building an initial proof-of-concept (POC). This was quickly designed and developed, and in matter of weeks we had real users using it via Testflight and providing valuable feedback for us to improve the product.</p>
+                </div>
+                <div class="Step">
+                    <div class="Step__count">3</div>
+                    <h4 class="Step__header">Designing and improving UI/UX based on feedback</h4>
+                    <p class="Step__desc">An improved experience was designed incorporating user feedback and additional functionality to cater for different use cases while maintaining a simple overall experience for the user. This was a continuos and iterative process.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="CaseStudyLayout__feature CaseStudyLayout__feature--aok" data-aos="fade-up" data-aos-duration="1000">
+        </div>
+    </section>
 
 
-	<section id="work" class="section" data-aos="fade-up" data-aos-offset="0">
-		<div class="container">
-			<div class="section__header">
-				<h3>Building digital products, globally.</h3>
-				<p>
-					I've designed and built digital products for organisations in multiple countries, working across various design phases with a primary focus on UI/UX design.
-				</p>
-			</div>
-			<div class="section__content">
-				<div class="grid-projects">
-
-					<a href="/projects/medical-blockchain.html" class="ProjectItem">
-						<h4>Designing a secure way to present medical information</h4>
-						<p class="company">AOKpass, Singapore</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><title>Icon Arrow Right</title><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-					</a>
-
-					<a href="/projects/bank-app.html" class="ProjectItem">
-						<h4>Designing a simple and convenient mobile banking experience</h4>
-						<p class="company">Bank Sinarmas, Indonesia</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><title>Icon Arrow Right</title><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-					</a>
-
-					<a href="/projects/startups-mvp.html" class="ProjectItem">
-						<h4>Helping startups design, build, and launch MVPs</h4>
-						<p class="company">Various startups in Malaysia</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><title>Icon Arrow Right</title><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-					</a>
-
-					<a class="ProjectItem ProjectItem--locked">
-						<h4>Designing a scheduling dashboard powered by machine learning</h4>
-						<p class="company">Australia</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><title>Icon Locked</title><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-					</a>
-
-					<a class="ProjectItem ProjectItem--locked hide">
-						<h4>Identifying digital opportunities for a F&B chain</h4>
-						<p class="company">Thailand</p>
-						<svg class="ProjectItem__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><title>Icon Locked</title><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-					</a>
-				</div>
-
-				<div class="banner">
-					<div class="banner__content">
-						<h4>Err, why are some projects locked?</h4>
-						<p>I've worked on a number of projects in confidential environments and can't publicly present the work done. Get in touch if you are interested to learn more about products I've built.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
+	
 
 	<section id="contact" class="section" data-aos="fade-up">
 		<div class="container">
@@ -169,4 +147,5 @@
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="/public/javascripts/main.js"></script>
 </body>
+	
 </html>
