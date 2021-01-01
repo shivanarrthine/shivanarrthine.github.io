@@ -505,7 +505,7 @@ a {
   .Step__header {
     margin: 1rem 0 0.5rem;
     font-size: 1rem;
-    width: 70%;
+    width: 75%;
     line-height: 1.5; }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
@@ -658,10 +658,11 @@ a {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3rem;
     grid-gap: clamp(3rem, 48px, 6rem); }
-  .CaseStudyLayout__feature {
+  .CaseStudyLayout__feature-container {
     margin-top: 6rem;
     padding: 4rem 0;
-    background-color: var(--color-background-case);
+    background-color: var(--color-background-case); }
+  .CaseStudyLayout__feature {
     width: 100vw;
     height: 1000px;
     height: clamp(100vh, 1400px, 120vh);
