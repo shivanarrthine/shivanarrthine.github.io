@@ -12,7 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/shivanarrthine/shivanarrthine.github.io.git"
   },
-  "dependencies": {},
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -20,10 +19,10 @@
   },
   "homepage": "https://github.com/shivanarrthine/shivanarrthine.github.io#readme",
   "devDependencies": {
-    "autoprefixer": "^9.8.0",
-    "cssnano": "^4.1.10",
-    "node-sass": "^4.14.1",
-    "nodemon": "^2.0.4",
-    "postcss-cli": "^7.1.1"
+    "autoprefixer": "^10.3.1",
+    "cssnano": "^5.0.8",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12",
+    "postcss-cli": "^8.3.1"
   }
 }
