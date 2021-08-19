@@ -1,18 +1,25 @@
 .container
     width: 70vw
+    max-width: 1080px
+    margin: 0 auto
+
+.container-sm
+    width: 70vw
+    max-width: 720px
     margin: 0 auto
 
 .grid-projects
     display: grid
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 1fr
     grid-template-rows: auto
     column-gap: 10%
 
 
 // Mobile devices
 @media all and (max-width: $breakpoint-mobile)
-    .container
+    .container, .container-sm
         width: 90vw
+        max-width: none
 
     .grid-projects
         grid-template-columns: 1fr
