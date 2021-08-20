@@ -13,6 +13,7 @@
         grid-gap: clamp(3rem, 48px, 6rem)
 
     
+    // featured image - aok
     &__feature-container
         margin-top: 6rem
         padding: 4rem 0
@@ -32,6 +33,27 @@
             background-repeat: no-repeat
 
 
+    // featured image in grid - perlinx
+    &__grid
+        display: grid
+        grid-template-columns: 60% 40%
+        grid-template-rows: 1fr 1fr
+        grid-gap: 1rem
+        
+        &.perlinx
+            height: 600px
+
+            & > :first-of-type
+                grid-row: span 2
+
+    &__gridItem
+        background: var(--color-background-case-px)
+        border-radius: 0.5rem
+        overflow: hidden
+
+            
+
+
 // Mobile devices
 @media all and (max-width: $breakpoint-tablet-p)
     .CaseStudyLayout
@@ -43,6 +65,29 @@
             &--aok
                 background-size: cover
 
+        &__grid
+            grid-template-columns: 1fr
+            grid-template-rows: auto
+            
+            &.perlinx
+                height: auto 
+        
+        &__gridItem
+            height: 15rem
+
+// Tablet portrait devices
+@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+    .CaseStudyLayout
+        &__grid
+            grid-template-columns: 1fr
+            grid-template-rows: auto
+            
+            &.perlinx
+                height: auto 
+        
+        &__gridItem
+            height: 28rem
+
 // Tablet landscape devices
 @media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
     .CaseStudyLayout
@@ -50,6 +95,16 @@
             height: 900px
             &--aok
                 background-size: 80vw
+
+        &__grid
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+
+            &.perlinx
+                height: 900px
+
+                & > :first-of-type
+                    grid-row: auto
 
 // Large desktop monitors
 @media all and (min-width: $breakpoint-desktop-lg)

@@ -6,6 +6,7 @@ html {
   --color-background: #fff;
   --color-background-secondary: #f2f2f2;
   --color-background-case: #F3F7FF;
+  --color-background-case-px: #C9DAD9;
   --color-text-default: #222;
   --color-text-body: #444;
   --color-text-secondary: #888;
@@ -14,6 +15,7 @@ html {
     --color-background: #fff;
     --color-background-secondary: #f2f2f2;
     --color-background-case: #F3F7FF;
+    --color-background-case-px: #C9DAD9;
     --color-text-default: #222;
     --color-text-body: #444;
     --color-text-secondary: #888;
@@ -22,6 +24,7 @@ html {
     --color-background: #222;
     --color-background-secondary: #383838;
     --color-background-case: rgba(255, 255, 255, 0.05);
+    --color-background-case-px: #8fc0bd;
     --color-text-default: #fff;
     --color-text-body: rgba(255, 255, 255, 0.9);
     --color-text-secondary: rgba(255, 255, 255, 0.5);
@@ -41,6 +44,7 @@ body {
     --color-background: #fff;
     --color-background-secondary: #f2f2f2;
     --color-background-case: #F3F7FF;
+    --color-background-case-px: #C9DAD9;
     --color-text-default: #222;
     --color-text-body: #444;
     --color-text-secondary: #888;
@@ -51,6 +55,7 @@ body {
     --color-background: #222;
     --color-background-secondary: #383838;
     --color-background-case: rgba(255, 255, 255, 0.05);
+    --color-background-case-px: #8fc0bd;
     --color-text-default: #fff;
     --color-text-body: rgba(255, 255, 255, 0.9);
     --color-text-secondary: rgba(255, 255, 255, 0.5);
@@ -682,22 +687,114 @@ a {
       background-position: center;
       background-size: 70vw;
       background-repeat: no-repeat; }
+  .CaseStudyLayout__grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem; }
+    .CaseStudyLayout__grid.perlinx {
+      height: 600px; }
+      .CaseStudyLayout__grid.perlinx > :first-of-type {
+        grid-row: span 2; }
+  .CaseStudyLayout__gridItem {
+    background: var(--color-background-case-px);
+    border-radius: 0.5rem;
+    overflow: hidden; }
 
 @media all and (max-width: 768px) {
   .CaseStudyLayout__steps {
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto); }
   .CaseStudyLayout__feature--aok {
-    background-size: cover; } }
+    background-size: cover; }
+  .CaseStudyLayout__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; }
+    .CaseStudyLayout__grid.perlinx {
+      height: auto; }
+  .CaseStudyLayout__gridItem {
+    height: 15rem; } }
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .CaseStudyLayout__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; }
+    .CaseStudyLayout__grid.perlinx {
+      height: auto; }
+  .CaseStudyLayout__gridItem {
+    height: 28rem; } }
 
 @media all and (min-width: 769px) and (max-width: 1024px) {
   .CaseStudyLayout__feature {
     height: 900px; }
     .CaseStudyLayout__feature--aok {
-      background-size: 80vw; } }
+      background-size: 80vw; }
+  .CaseStudyLayout__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; }
+    .CaseStudyLayout__grid.perlinx {
+      height: 900px; }
+      .CaseStudyLayout__grid.perlinx > :first-of-type {
+        grid-row: auto; } }
 
 @media all and (min-width: 2560px) {
   .CaseStudyLayout__feature--aok {
     background-size: 50vw; } }
+
+div[class*='img-'] img {
+  image-rendering: -webkit-optimize-contrast; }
+
+.img-perlinx-feature {
+  background: #19DED1;
+  height: 46rem; }
+  .img-perlinx-feature img {
+    width: 100%;
+    margin: 56px; }
+
+.img-perlinx--01 img {
+  height: 100%;
+  margin: 10%; }
+
+.img-perlinx--02 {
+  background: #162536;
+  border: 1px solid #444; }
+  .img-perlinx--02 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.img-perlinx--03 img {
+  display: block;
+  margin: 8% auto 0;
+  width: 85%; }
+
+@media all and (max-width: 480px) {
+  .img-perlinx-feature {
+    height: 20rem; }
+    .img-perlinx-feature img {
+      width: 120%;
+      margin: 32px; }
+  .img-perlinx--01 img {
+    height: auto;
+    margin: 10%;
+    width: 100%; } }
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .img-perlinx--01 img {
+    height: auto;
+    margin: 10%;
+    width: 100%; } }
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  .img-perlinx-feature {
+    height: 40rem; }
+  .img-perlinx--01 {
+    grid-row: auto;
+    grid-column: span 2;
+    height: 600px; }
+    .img-perlinx--01 img {
+      height: auto;
+      margin: 10%;
+      width: 90%; } }
 
 /*# sourceMappingURL=../../scss/styles.css.map */
