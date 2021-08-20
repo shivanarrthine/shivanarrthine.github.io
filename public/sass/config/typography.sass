@@ -14,6 +14,7 @@ h1
         background: -webkit-linear-gradient(315deg, var(--color-text-accent) 60%, #7e60d0 )
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone; // iOS fix
 
 // currently not in use    
 h2
@@ -69,7 +70,7 @@ a
     color: var(--color-text-default)
 
     &.textlink
-        font-weight: $font-weight-default
+        // font-weight: $font-weight-default
         color: var(--color-text-default)
         border-bottom: 2px solid var(--color-text-default)
 
