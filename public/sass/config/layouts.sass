@@ -17,8 +17,12 @@
 
 // Mobile devices
 @media all and (max-width: $breakpoint-mobile)
-    .container, .container-sm
+    .container
         width: 90vw
+        max-width: none
+
+    .container-sm
+        width: 80vw
         max-width: none
 
     .grid-projects
