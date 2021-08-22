@@ -574,6 +574,25 @@ a {
   .Step__desc {
     grid-area: desc; }
 
+.toast {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: var(--color-text-accent);
+  padding: 0.5rem 2rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.5s ease; }
+  .toast__message {
+    color: var(--color-background);
+    font-size: 0.875rem;
+    margin: 0; }
+  .toast.show {
+    transform: translateY(0);
+    opacity: 1; }
+
 .ProjectLayout {
   padding: 6rem 0; }
   .ProjectLayout__header {
@@ -742,17 +761,21 @@ a {
     background-size: 50vw; } }
 
 div[class*='img-'] img {
-  image-rendering: -webkit-optimize-contrast; }
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; }
 
 .img-perlinx-feature {
   background: #19DED1;
   height: 46rem; }
   .img-perlinx-feature img {
-    width: 100%;
+    width: 120%;
     margin: 56px; }
 
 .img-perlinx--01 img {
-  height: 100%;
+  width: 140%;
   margin: 10%; }
 
 .img-perlinx--02 {
@@ -780,6 +803,8 @@ div[class*='img-'] img {
     width: 100%; } }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
+  .img-perlinx-feature {
+    height: 42rem; }
   .img-perlinx--01 img {
     height: auto;
     margin: 10%;
@@ -795,6 +820,6 @@ div[class*='img-'] img {
     .img-perlinx--01 img {
       height: auto;
       margin: 10%;
-      width: 90%; } }
+      width: 120%; } }
 
 /*# sourceMappingURL=../../scss/styles.css.map */

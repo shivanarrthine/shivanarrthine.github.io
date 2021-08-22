@@ -3,7 +3,11 @@
 
 div[class*='img-']
     img
-        image-rendering: -webkit-optimize-contrast 
+        image-rendering: -moz-crisp-edges         // Firefox
+        image-rendering:   -o-crisp-edges         // Opera 
+        image-rendering: -webkit-optimize-contrast // Webkit (non-standard naming) 
+        image-rendering: crisp-edges
+        -ms-interpolation-mode: nearest-neighbor  // IE (non-standard property) 
 
 // PerlinX - web
 .img-perlinx-feature
@@ -11,12 +15,12 @@ div[class*='img-']
     height: 46rem
 
     img
-        width: 100%
+        width: 120%
         margin: 56px
 
 .img-perlinx--01
     img
-        height: 100%
+        width: 140%
         margin: 10%
 
 .img-perlinx--02
@@ -52,6 +56,9 @@ div[class*='img-']
 
 // PerlinX - Tablet portrait devices
 @media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+    .img-perlinx-feature
+        height: 42rem
+    
     .img-perlinx--01
         img
             height: auto;
@@ -71,4 +78,4 @@ div[class*='img-']
         img 
             height: auto;
             margin: 10%;
-            width: 90%;
+            width: 120%;
