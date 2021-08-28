@@ -617,8 +617,10 @@ a {
     margin-top: 10%; }
 
 @media all and (max-width: 480px) {
-  .ProjectLayout__feature {
-    height: 20rem; }
+  .ProjectLayout {
+    padding: 3rem 0; }
+    .ProjectLayout__feature {
+      height: 20rem; }
   .ProjectLayout__feature.sinarmas img {
     width: 100%; } }
 
@@ -641,7 +643,7 @@ a {
 
 @media all and (max-width: 480px) {
   .CollectionLayout {
-    padding: 4rem 0 6rem; }
+    padding: 3rem 0 6rem; }
     .CollectionLayout__header {
       width: 100%; }
     .CollectionLayout__desc {
