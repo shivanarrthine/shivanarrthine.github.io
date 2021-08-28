@@ -344,24 +344,6 @@ a {
       margin: 0;
       opacity: 0.7; }
 
-.banner {
-  background: var(--color-background-secondary);
-  border-radius: 0.5rem;
-  padding: 2rem; }
-  .banner__content {
-    width: 70%; }
-    .banner__content p {
-      font-size: 0.875rem;
-      margin: 0; }
-
-@media all and (max-width: 480px) {
-  .banner__content {
-    width: 100%; } }
-
-@media all and (min-width: 480px) and (max-width: 1024px) {
-  .banner__content {
-    width: 90%; } }
-
 .social {
   display: flex;
   align-items: center; }
