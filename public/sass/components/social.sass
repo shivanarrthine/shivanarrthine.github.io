@@ -3,20 +3,11 @@
     display: flex
     align-items: center
 
-    &__email
+    li
         position: relative
-        margin-right: 2rem
-        
-        input, label
-            position: absolute
-            opacity: 0
-            z-index: -1
-
-    li:not(.social__email)
-        position: relative
-        margin-right: 1rem
-        width: 3rem
-        height: 3rem
+        margin-right: 0.5rem
+        width: 2.6rem
+        height: 2.6rem
         padding: 0.8rem
 
         &::before
@@ -25,8 +16,8 @@
             top: 0
             left: 0
             z-index: -1
-            width: 3rem
-            height: 3rem
+            width: 2.6rem
+            height: 2.6rem
             background: var(--color-background-secondary)
             border-radius: 100%
             transform: scale(0.2)
@@ -34,7 +25,7 @@
             transition: all 0.3s ease
         
         svg
-            fill: var(--color-text-default)
+            fill: var(--color-text-secondary)
 
         &:hover
             &::before
@@ -42,14 +33,35 @@
                 opacity: 1
 
 
+// email as text link
+
+.copyemail    
+    position: relative
+    
+    input, label
+        position: absolute
+        opacity: 0
+        z-index: -1
+
+    #copyEmailBtn
+        border-bottom: 2px solid var(--color-text-default)
+        cursor: pointer
+
+        &:hover
+            transition: all 0.5s ease
+            color: var(--color-text-accent)
+            border-color: var(--color-text-accent)
+
+
+
 // Mobile devices
 @media all and (max-width: $breakpoint-mobile)
     .social
+        margin-left: -0.8rem
         display: grid
         grid-template-columns: repeat(4, 40px)
         grid-template-rows: auto auto
-        grid-gap: 1rem
+        grid-gap: 0.2rem
 
-        &__email
-            grid-column-start: 1
-            grid-column-end: 5
+        li
+            margin: 0

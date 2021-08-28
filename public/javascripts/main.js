@@ -111,13 +111,12 @@ function copyEmail(){
     // copy to clipboard
     document.execCommand('copy');
 
-    // show copied message
-    $("#copyEmailBtn").text("Email copied")
-    $("#copyEmailBtn").addClass('active')
+    // show toast message
+    $("#toastEmailCopied").addClass('show')
     setTimeout(function(){
-        $("#copyEmailBtn").text("Copy email")
-        $("#copyEmailBtn").removeClass('active')
-    }, 2000)
+        $("#toastEmailCopied").removeClass('show')
+    }, 3000)
+
 }
 
 // smooth scroll fallback

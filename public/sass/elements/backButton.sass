@@ -1,27 +1,33 @@
 .backButton
-    display: inline-block
-    transform: translateX(-6px)
+    display: flex
+    justify-content: center
+    align-items: center
+    // transform: translateX(-6px)
+    width: 56px
+    height: 56px
+    background: var(--color-text-default)
+    color: var(--color-background)
+    border-radius: 100%
+    transform: scale(1)
+    transition: all 0.5s ease
 
-    &::before
-        content: ""
-        position: absolute
-        width: 40px
-        height: 40px
-        background-color: var(--color-background-secondary)
-        border-radius: 100%
-        transform: scale(0.1) 
-        opacity: 0
-        transition: all 0.5s ease
+    // &::before
+    //     content: ""
+    //     position: absolute
+    //     width: 56px
+    //     height: 56px
+    //     background-color: var(--color-text-accent)
+    //     border-radius: 100%
+    //     transform: scale(0.1) 
+    //     opacity: 0
+    //     transition: all 0.5s ease
 
     svg
-        width: 40px
-        height: 40px
-        transform: translateX(0px)
-        transition: all 0.3s ease
+        width: 32px
+        height: 32px
+        // transform: translateX(0px)
+        // transition: all 0.3s ease
 
     &:hover
-        &::before
-            transform: scale(1.2)
-            opacity: 1
-        svg
-            transform:
+        transform: scale(1.1)
+        background: -webkit-linear-gradient(315deg, var(--color-text-accent) 60%, #7e60d0)

@@ -1,13 +1,14 @@
 
 .ProjectItem
     position: relative
-    margin-bottom: 2rem
+    margin-bottom: 1.5rem
 
     h4
-        width: 80%
+        width: 90%
 
     p.company
         font-size: $font-size-sm
+        font-weight: $font-weight-medium
         color: var(--color-text-secondary)
         line-height: 1
 
@@ -22,7 +23,7 @@
 
     // states
     &--locked
-        opacity: 0.3
+        opacity: 0.5
 
     &:hover
         &:not(.ProjectItem--locked) .ProjectItem__icon
