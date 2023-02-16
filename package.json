@@ -21,7 +21,7 @@
   "devDependencies": {
     "autoprefixer": "^10.3.1",
     "cssnano": "^5.0.8",
-    "node-sass": "^7.0.0",
+    "node-sass": "^7.0.3",
     "nodemon": "^2.0.20",
     "postcss-cli": "^8.3.1"
   }
