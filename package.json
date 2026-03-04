@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "node-sass --include-path --source-map scss public/sass/application.sass public/css/styles.css",
+    "build-css": "sass public/sass/application.sass public/css/styles.css --load-path=public/sass --source-map",
     "post-css": "npx postcss public/css/styles.css --config postcss.config.js -o public/css/styles.min.css",
     "watch-css": "nodemon -e sass -x \"npm run build-css && npm run post-css\""
   },
@@ -19,10 +19,11 @@
   },
   "homepage": "https://github.com/shivanarrthine/shivanarrthine.github.io#readme",
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
-    "cssnano": "^5.0.8",
-    "node-sass": "^9.0.0",
-    "nodemon": "^2.0.20",
-    "postcss-cli": "^8.3.1"
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^6.1.2",
+    "nodemon": "^3.1.0",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.77.0"
   }
 }
