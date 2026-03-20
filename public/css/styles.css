@@ -122,7 +122,7 @@ body {
   }
 }
 h1, h2, h3, h4 {
-  font-family: "Inter";
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 h1 {
