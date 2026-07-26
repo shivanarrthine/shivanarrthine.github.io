@@ -22,7 +22,7 @@
     "autoprefixer": "^10.4.20",
     "cssnano": "^6.1.2",
     "nodemon": "^3.1.0",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.23",
     "postcss-cli": "^11.0.0",
     "sass": "^1.77.0"
   }
