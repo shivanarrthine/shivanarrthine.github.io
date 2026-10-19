@@ -1,20 +1,16 @@
 h1, h2, h3, h4
-    font-family: $font-family-header, Arial, Helvetica, sans-serif
+    font-family: $font-family-header, ui-monospace, monospace
 
 // page header        
 h1
     font-size: $font-size-xl
-    font-weight: $font-weight-medium
-    line-height: 1.5
+    font-weight: $font-weight-default
+    line-height: 1.4
     margin-bottom: 1rem
-    letter-spacing: -1.5px
 
     b 
-        font-weight: $font-weight-sbold
-        background: -webkit-linear-gradient(315deg, var(--color-text-accent) 60%, #7e60d0 )
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-box-decoration-break: clone; // iOS fix 
+        font-weight: $font-weight-default
+        color: inherit
 
 // currently not in use    
 h2
@@ -50,9 +46,8 @@ p
     font-size: $font-size-default
     font-weight: $font-weight-default
     color: var(--color-text-body)
-    line-height: 1.8
+    line-height: 20px
     margin-bottom: 1rem
-    letter-spacing: -0.2px
 
 p.large
     font-size: $font-size-md
