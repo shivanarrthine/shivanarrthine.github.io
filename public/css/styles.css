@@ -826,7 +826,7 @@ a.textlink:hover {
   bottom: 0;
   width: 100%;
   text-align: center;
-  background: var(--color-text-accent);
+  background: var(--color-text-default);
   padding: 0.5rem 2rem;
   transform: translateY(100px);
   opacity: 0;
@@ -1016,11 +1016,6 @@ a.textlink:hover {
   overflow: hidden;
 }
 .intro__header {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  right: 0;
   padding: 2.5rem 0 1.5rem;
   background: color-mix(in srgb, var(--color-background) 70%, transparent);
 }
@@ -1082,6 +1077,7 @@ a.textlink:hover {
 .intro__msg p {
   margin: 0;
   color: color-mix(in srgb, var(--color-text-default) 90%, transparent);
+  text-wrap: pretty;
   transition: color 600ms ease;
 }
 .intro__msg--actions {
@@ -1151,6 +1147,14 @@ a.textlink:hover {
   opacity: 0.85;
 }
 
+body.intro .intro__header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 @keyframes introMsgIn {
   from {
     grid-template-rows: 0fr;
@@ -1189,6 +1193,20 @@ a.textlink:hover {
     transition: none;
   }
 }
+html:has(main.work),
+body:has(main.work) {
+  overflow-x: clip;
+}
+
+body:has(main.work) .intro__header {
+  padding: 1.5rem 0 1rem;
+}
+
+main.work {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 .work {
   --work-content-width: min(80vw, 1200px);
   --work-content-inset: max(0px, calc((100vw - var(--work-content-width)) / 2));
@@ -1208,7 +1226,7 @@ a.textlink:hover {
   white-space: nowrap;
 }
 .work__section {
-  padding: 7.5rem 0 4rem;
+  padding: 4rem 0;
 }
 .work__section--play .work__sectionLayout {
   grid-template-areas: "title" "body" "carousel";
@@ -1241,6 +1259,7 @@ a.textlink:hover {
   grid-area: body;
   margin: 0;
   color: var(--color-text-secondary);
+  text-wrap: pretty;
 }
 .work__experience {
   display: flex;
@@ -1258,15 +1277,20 @@ a.textlink:hover {
   min-width: 0;
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 .work__track {
   display: flex;
   align-items: flex-start;
   gap: 1.75rem;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   padding-left: var(--work-track-padding-start);
-  padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+  padding-right: max(0px, 100% - var(--work-card-width) - var(--work-track-padding-start));
   scroll-padding-inline-start: var(--work-track-padding-start);
-  scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+  scroll-padding-inline-end: max(0px, 100% - var(--work-card-width) - var(--work-track-padding-start));
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -1428,11 +1452,50 @@ a.textlink:hover {
 }
 
 @media all and (max-width: 768px) {
-  .work {
+  body:has(main.work) {
     --work-content-width: min(90vw, 1200px);
   }
+  body:has(main.work) .content-container {
+    width: var(--work-content-width);
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+  .work {
+    --work-content-width: min(90vw, 1200px);
+    --work-carousel-start: 0px;
+    --work-track-padding-start: var(--work-content-inset);
+    --work-card-media-height: calc(var(--work-card-height) - 7rem);
+  }
+  .work__section--play .work__sectionLayout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "body" "carousel";
+    padding-left: 0;
+  }
+  .work__section--work .work__sectionLayout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "carousel" "body";
+    padding-left: 0;
+  }
+  .work__carousel {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .work__card {
+    height: auto;
+    min-height: var(--work-card-height);
+  }
+  .work__cardMedia {
+    flex: 0 0 var(--work-card-media-height);
+    height: var(--work-card-media-height);
+    min-height: var(--work-card-media-height);
+  }
+  .work__experience {
+    padding-top: 2rem;
+  }
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 769px) {
   .work__chatList {
     max-width: 18rem;
   }
@@ -1441,10 +1504,7 @@ a.textlink:hover {
     max-width: 100%;
   }
 }
-@media all and (min-width: 768px) and (max-width: 1024px) {
-  .work__section {
-    padding: 7rem 0 3.5rem;
-  }
+@media all and (min-width: 769px) and (max-width: 1024px) {
   .work__section--play .work__sectionLayout, .work__section--work .work__sectionLayout {
     grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
     grid-template-areas: "title carousel" "body carousel";
@@ -1453,7 +1513,11 @@ a.textlink:hover {
     row-gap: 1.25rem;
     align-content: start;
     min-height: auto;
-    padding-left: var(--work-content-inset);
+    width: 100%;
+    max-width: var(--work-content-width);
+    margin-left: var(--work-content-inset);
+    margin-right: auto;
+    padding-left: 0;
     box-sizing: border-box;
   }
   .work__title {
@@ -1477,30 +1541,31 @@ a.textlink:hover {
   .work__section--work .content-container {
     justify-content: flex-start;
   }
+  .work__experience {
+    padding-top: 2rem;
+  }
   .work__carousel {
     align-self: start;
     margin-top: 1.25rem;
     width: calc(100% + var(--work-content-inset));
+    max-width: none;
     margin-left: 0;
     margin-right: calc(-1 * var(--work-content-inset));
   }
   .work {
-    --work-carousel-start: calc(var(--work-content-inset) + (100vw - var(--work-content-inset) - 2vw) * 0.36 + 2vw);
+    --work-carousel-start: calc(var(--work-content-inset) + (var(--work-content-width) - 2vw) * 0.36 + 2vw);
   }
   .work__track {
     padding-left: var(--work-track-padding-start);
-    padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+    padding-right: max(0px, 100% - var(--work-card-width) - var(--work-track-padding-start));
     scroll-padding-inline-start: var(--work-track-padding-start);
-    scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+    scroll-padding-inline-end: max(0px, 100% - var(--work-card-width) - var(--work-track-padding-start));
   }
   .work__arrows {
     margin-left: var(--work-track-padding-start);
   }
 }
 @media all and (min-width: 1025px) {
-  .work__section {
-    padding: 8.75rem 0 5rem;
-  }
   .work__section--play .work__sectionLayout, .work__section--work .work__sectionLayout {
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
     grid-template-areas: "title carousel" "body carousel";
@@ -1508,8 +1573,12 @@ a.textlink:hover {
     column-gap: 5vw;
     row-gap: 2rem;
     align-content: start;
-    min-height: calc(100vh - 8.75rem);
-    padding-left: var(--work-content-inset);
+    min-height: calc(100vh - 4rem);
+    width: 100%;
+    max-width: var(--work-content-width);
+    margin-left: var(--work-content-inset);
+    margin-right: auto;
+    padding-left: 0;
     box-sizing: border-box;
   }
   .work__title {
@@ -1528,17 +1597,18 @@ a.textlink:hover {
     align-self: start;
     margin-top: 1.25rem;
     width: calc(100% + var(--work-content-inset));
+    max-width: none;
     margin-left: 0;
     margin-right: calc(-1 * var(--work-content-inset));
   }
   .work {
-    --work-carousel-start: calc(var(--work-content-inset) + (100vw - var(--work-content-inset) - 5vw) * 0.525 + 5vw);
+    --work-carousel-start: calc(var(--work-content-inset) + (var(--work-content-width) - 5vw) * 0.525 + 5vw);
   }
   .work__track {
     padding-left: var(--work-track-padding-start);
-    padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+    padding-right: max(0px, 100% - var(--work-card-width) - var(--work-track-padding-start));
     scroll-padding-inline-start: var(--work-track-padding-start);
-    scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+    scroll-padding-inline-end: max(0px, 100% - var(--work-card-width) - var(--work-track-padding-start));
   }
   .work__arrows {
     margin-left: var(--work-track-padding-start);

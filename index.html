@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<title>Shiva Narrthine | Product Designer</title>
+	<meta charset="UTF-8">
 
-	<meta name="og:title" content="Shiva Narrthine - Product Designer">
+	<title>Shiva Narrthine | Sr. Product Designer</title>
+
+	<meta name="og:title" content="Shiva Narrthine - Sr. Product Designer">
 	<meta name="description" content="Senior product designer from Malaysia who has designed and built digital products globally.">
-    <meta name="og:description" content="Senior product designer from Malaysia who has designed and built digital products globally.">
+	<meta name="og:description" content="Senior product designer from Malaysia who has designed and built digital products globally.">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="/public/css/reset.css" />
 	<link rel="stylesheet" href="/public/css/styles.min.css" />
-	
+
 	<link rel="apple-touch-icon-precomposed" href="/public/images/favicon-152.png">
 	<link rel="icon" href="/public/images/favicon.png" sizes="32x32">
 
@@ -32,117 +33,71 @@
 	</script>
 
 </head>
-<body>
+<body class="intro">
 
-	<main class="home">
-		<section class="home__masthead" aria-label="Introduction">
-			<div class="container">
-				<header class="home__intro">
-					<h1 class="home__intro-name">Shiva Narrthine</h1>
-					<p class="home__intro-tagline">Senior Product Designer. Designing &amp; building digital products globally.</p>
-				</header>
-				<div class="home__mastheadActions">
-					<input id="themeSwitcher" class="ThemeToggle" type="checkbox" checked aria-label="Toggle color theme">
-				</div>
+	<header class="intro__header">
+		<div class="content-container intro__headerBar">
+			<div class="intro__headerText">
+				<h1 class="intro__name">Shiva Narrthine</h1>
+				<p class="intro__tagline">Designing &amp; building digital products globally.</p>
 			</div>
-		</section>
+			<input id="themeSwitcher" class="ThemeToggle intro__themeToggle" type="checkbox" checked aria-label="Toggle color theme">
+		</div>
+	</header>
 
-		<section class="home__section" aria-labelledby="recent-experiments">
-			<div class="container">
-				<h2 class="home__section-label" id="recent-experiments">Recent experiments</h2>
-			</div>
-			<div class="home__work-bleed home__carouselFade">
-				<div id="experimentsCarousel" class="workScroll" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Recent experiments">
-					<a href="#" class="workCard">
-						<div class="workCard__media" aria-hidden="true"></div>
-						<p class="workCard__caption"><span class="workCard__title">Grounds.</span> A delightful coffee brewing companion for home baristas who love discovering new beans.</p>
+	<main id="introChat" class="intro__chat" aria-live="polite">
+		<ol class="intro__messages content-container">
+			<li class="intro__msg">
+				<div class="intro__avatar" aria-hidden="true"></div>
+			</li>
+			<li class="intro__msg">
+				<p>Hi, I'm Shiva &#128075;</p>
+			</li>
+			<li class="intro__msg">
+				<p>A Senior Product Designer based in Malaysia, who has designed and built digital products globally.</p>
+			</li>
+			<li class="intro__msg" data-delay="2000">
+				<p>I was part of a remote design team at Automattic, improving WooCommerce and helping millions of merchants power their online stores.</p>
+			</li>
+			<li class="intro__msg" data-delay="3200">
+				<p>Before that, I explored the DeFi space with Perlin, did UX and digital consulting at McKinsey, and helped founders launch startups at VLT Labs.</p>
+			</li>
+			<li class="intro__msg" data-delay="3200">
+				<p>Currently, I'm building and experimenting for fun, exploring new tools, ideas, and workflows.</p>
+			</li>
+			<li class="intro__msg" data-delay="2000">
+				<p>Explore some of my recent work below and reach out if you are interested to work together.</p>
+			</li>
+			<li class="intro__msg intro__msg--actions">
+				<div class="intro__actions">
+					<a class="intro__btn" href="/work.html">
+						Explore work
+						<svg class="intro__btnIcon" viewBox="1.754 0.234 15.033 15.008" width="15" height="15" aria-hidden="true"><path d="M1.983 14.766C2.302 15.071 2.741 15.093 3.077 14.766L13.829 4 15.824 1.877C16.117 1.579 16.103 1.182 15.833 0.902 15.553 0.622 15.153 0.613 14.86 0.906L12.736 2.897 1.984 13.675C1.657 14.003 1.67 14.447 1.983 14.766ZM15.181 6.769L15.181 11.288C15.181 11.699 15.533 12.074 15.968 12.074 16.386 12.074 16.751 11.724 16.751 11.254L16.738 0.836C16.738 0.35 16.415 0 15.903 0L5.498 0C5.012 0 4.689 0.367 4.689 0.788 4.689 1.202 5.055 1.552 5.464 1.552L9.582 1.552 15.373 1.384Z" /></svg>
 					</a>
-					<!-- <a href="#" class="workCard">
-						<div class="workCard__media" aria-hidden="true"></div>
-						<p class="workCard__caption"><span class="workCard__title">Shivotravels.</span> A simple website to host photos from my travels over the years.</p>
-					</a> -->
+					<button class="intro__btn intro__btn--outline" type="button" data-chat-next>Get in touch</button>
 				</div>
-			</div>
-		</section>
-
-		<section class="home__section" aria-labelledby="work-years">
-			<div class="container">
-				<h2 class="home__section-label" id="work-years">Work over the years</h2>
-				<div class="home__carouselFade">
-				<div id="workCarousel" class="workScroll workScroll--contained" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Work over the years">
-					<article class="workCard workCard--static">
-						<div class="workCard__media" aria-hidden="true"></div>
-						<p class="workCard__caption"><span class="workCard__title">WooCommerce Emails.</span> Modernized transactional store emails for Woo stores. Rolled out worldwide in WooCommerce 6.8.</p>
-					</article>
-					<article class="workCard workCard--static">
-						<div class="workCard__media" aria-hidden="true"></div>
-						<p class="workCard__caption"><span class="workCard__title">MailPoet Onboarding.</span> Tweaked the onboarding for MailPoet's WordPress plugin. Increased signups by two-fold.</p>
-					</article>
-					<article class="workCard workCard--static">
-						<div class="workCard__media" aria-hidden="true"></div>
-						<p class="workCard__caption"><span class="workCard__title">WooCommerce Multichannel.</span> Connecting merchants with multiple sales channels to grow their stores.</p>
-					</article>
-					<article class="workCard workCard--placeholder" aria-hidden="true">
-						<div class="workCard__media"></div>
-						<p class="workCard__caption"><span class="workCard__title">More.</span> work coming soon.</p>
-					</article>
-					<article class="workCard workCard--placeholder" aria-hidden="true">
-						<div class="workCard__media"></div>
-						<p class="workCard__caption"><span class="workCard__title">More.</span> work coming soon.</p>
-					</article>
+			</li>
+			<li class="intro__msg" data-await>
+				<p>Feel free to reach out via email or LinkedIn. Cheers!</p>
+			</li>
+			<li class="intro__msg intro__msg--actions">
+				<div class="intro__actions">
+					<button class="intro__btn" type="button" onclick="copyEmail()">Copy email</button>
+					<a class="intro__btn intro__btn--outline" href="https://www.linkedin.com/in/shivanarrthine" target="_blank" rel="noopener">
+						LinkedIn
+						<svg class="intro__btnIcon" viewBox="1.754 0.234 15.033 15.008" width="15" height="15" aria-hidden="true"><path d="M1.983 14.766C2.302 15.071 2.741 15.093 3.077 14.766L13.829 4 15.824 1.877C16.117 1.579 16.103 1.182 15.833 0.902 15.553 0.622 15.153 0.613 14.86 0.906L12.736 2.897 1.984 13.675C1.657 14.003 1.67 14.447 1.983 14.766ZM15.181 6.769L15.181 11.288C15.181 11.699 15.533 12.074 15.968 12.074 16.386 12.074 16.751 11.724 16.751 11.254L16.738 0.836C16.738 0.35 16.415 0 15.903 0L5.498 0C5.012 0 4.689 0.367 4.689 0.788 4.689 1.202 5.055 1.552 5.464 1.552L9.582 1.552 15.373 1.384Z" /></svg>
+					</a>
 				</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="home__section" aria-labelledby="experience">
-			<div class="container">
-				<h2 class="home__section-label" id="experience">Experience</h2>
-				<div class="home__experience">
-					<div class="home__experienceRow">
-						<p class="home__experienceRow-company">Automattic Inc.</p>
-						<p class="home__experienceRow-role">Senior Product Designer, WooCommerce &amp; MailPoet</p>
-					</div>
-					<div class="home__experienceRow">
-						<p class="home__experienceRow-company">Perlin</p>
-						<p class="home__experienceRow-role">Senior Product Designer, Blockchain &amp; DeFi solutions</p>
-					</div>
-					<div class="home__experienceRow">
-						<p class="home__experienceRow-company">McKinsey &amp; Company</p>
-						<p class="home__experienceRow-role">UX Designer, Digital Consultant</p>
-					</div>
-					<div class="home__experienceRow">
-						<p class="home__experienceRow-company">VLT Labs</p>
-						<p class="home__experienceRow-role">Product Designer, UI Developer</p>
-					</div>
-					<div class="home__experienceRow">
-						<p class="home__experienceRow-company">A few experimental startups</p>
-						<p class="home__experienceRow-role">Design Co-founder</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="home__section" aria-labelledby="contact">
-			<div class="container">
-				<h2 class="home__section-label" id="contact">Get in touch</h2>
-				<p class="home__contact">
-					<span class="copyemail">
-						<label for="email">Contact Email</label>
-						<input id="email" value="&#115;&#104;&#105;&#118;&#097;&#110;&#097;&#114;&#114;&#116;&#104;&#105;&#110;&#101;&#064;&#103;&#109;&#97;&#105;&#108;&#046;&#099;&#111;&#109;" readonly aria-readonly="false" />
-						<span id="copyEmailBtn" class="home__contactEmail" onclick="copyEmail()">Copy my email</span>
-					</span><span class="home__contactSep" aria-hidden="true"> / </span><a class="home__contactLink" href="https://www.linkedin.com/in/shivanarrthine" target="_blank" rel="noopener">LinkedIn</a>
-				</p>
-			</div>
-		</section>
-
-		<footer class="siteFooter">
-			<div class="container">
-				<p class="siteFooter__copy">(c) Shiva Narrthine. 2026</p>
-				<p class="siteFooter__tagline">Building for the world,<br /> from Malaysia.</p>
-			</div>
-		</footer>
+			</li>
+		</ol>
 	</main>
+
+	<footer class="intro__footer">
+		<span class="copyemail">
+			<label for="email">Contact Email</label>
+			<input id="email" value="&#115;&#104;&#105;&#118;&#097;&#110;&#097;&#114;&#114;&#116;&#104;&#105;&#110;&#101;&#064;&#103;&#109;&#97;&#105;&#108;&#046;&#099;&#111;&#109;" readonly aria-readonly="false" />
+		</span>
+	</footer>
 
 	<div id="toastEmailCopied" class="toast">
 		<p class="toast__message">Email copied!</p>
@@ -150,5 +105,7 @@
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script src="/public/javascripts/main.js"></script>
+	<script src="/public/javascripts/chat.js"></script>
+	<script src="/public/javascripts/intro.js"></script>
 </body>
 </html>

@@ -1,3 +1,15 @@
+html:has(main.work),
+body:has(main.work)
+    overflow-x: clip
+
+body:has(main.work)
+    .intro__header
+        padding: 1.5rem 0 1rem
+
+main.work
+    max-width: 100%
+    overflow-x: clip
+
 .work
     --work-content-width: min(80vw, 1200px)
     --work-content-inset: max(0px, calc((100vw - var(--work-content-width)) / 2))
@@ -17,7 +29,7 @@
         white-space: nowrap
 
     &__section
-        padding: 7.5rem 0 4rem
+        padding: 4rem 0
 
         &--play .work__sectionLayout
             grid-template-areas: "title" "body" "carousel"
@@ -50,6 +62,7 @@
         grid-area: body
         margin: 0
         color: var(--color-text-secondary)
+        text-wrap: pretty
 
     &__experience
         display: flex
@@ -67,15 +80,20 @@
         min-width: 0
         width: 100vw
         margin-left: calc(50% - 50vw)
+        margin-right: calc(50% - 50vw)
 
     &__track
         display: flex
         align-items: flex-start
         gap: 1.75rem
+        box-sizing: border-box
+        width: 100%
+        min-width: 0
+        max-width: 100%
         padding-left: var(--work-track-padding-start)
-        padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+        padding-right: max(0px, calc(100% - var(--work-card-width) - var(--work-track-padding-start)))
         scroll-padding-inline-start: var(--work-track-padding-start)
-        scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+        scroll-padding-inline-end: max(0px, calc(100% - var(--work-card-width) - var(--work-track-padding-start)))
         overflow-x: auto
         overflow-y: hidden
         scroll-snap-type: x mandatory
@@ -236,10 +254,49 @@
         translate: 0 0
 
 @media all and (max-width: $breakpoint-tablet-p)
-    .work
+    body:has(main.work)
         --work-content-width: min(90vw, 1200px)
 
-@media all and (min-width: $breakpoint-tablet-p)
+        .content-container
+            width: var(--work-content-width)
+            margin-inline: auto
+            box-sizing: border-box
+
+    .work
+        --work-content-width: min(90vw, 1200px)
+        --work-carousel-start: 0px
+        --work-track-padding-start: var(--work-content-inset)
+        --work-card-media-height: calc(var(--work-card-height) - 7rem)
+
+        &__section--play &__sectionLayout
+            grid-template-columns: minmax(0, 1fr)
+            grid-template-areas: "title" "body" "carousel"
+            padding-left: 0
+
+        &__section--work &__sectionLayout
+            grid-template-columns: minmax(0, 1fr)
+            grid-template-areas: "title" "carousel" "body"
+            padding-left: 0
+
+        &__carousel
+            width: 100vw
+            max-width: none
+            margin-left: calc(50% - 50vw)
+            margin-right: calc(50% - 50vw)
+
+        &__card
+            height: auto
+            min-height: var(--work-card-height)
+
+        &__cardMedia
+            flex: 0 0 var(--work-card-media-height)
+            height: var(--work-card-media-height)
+            min-height: var(--work-card-media-height)
+
+        &__experience
+            padding-top: 2rem
+
+@media all and (min-width: $breakpoint-tablet-p + 1)
     .work
         &__chatList
             max-width: 18rem
@@ -248,11 +305,8 @@
             width: 15.3125rem
             max-width: 100%
 
-@media all and (min-width: $breakpoint-tablet-p) and (max-width: $breakpoint-tablet-l)
+@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
     .work
-        &__section
-            padding: 7rem 0 3.5rem
-
         &__section--play &__sectionLayout,
         &__section--work &__sectionLayout
             grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr)
@@ -262,7 +316,11 @@
             row-gap: 1.25rem
             align-content: start
             min-height: auto
-            padding-left: var(--work-content-inset)
+            width: 100%
+            max-width: var(--work-content-width)
+            margin-left: var(--work-content-inset)
+            margin-right: auto
+            padding-left: 0
             box-sizing: border-box
 
         &__title
@@ -286,29 +344,30 @@
         &__section--work .content-container
             justify-content: flex-start
 
+        &__experience
+            padding-top: 2rem
+
         &__carousel
             align-self: start
             margin-top: 1.25rem
             width: calc(100% + var(--work-content-inset))
+            max-width: none
             margin-left: 0
             margin-right: calc(-1 * var(--work-content-inset))
 
-        --work-carousel-start: calc(var(--work-content-inset) + (100vw - var(--work-content-inset) - 2vw) * 0.36 + 2vw)
+        --work-carousel-start: calc(var(--work-content-inset) + (var(--work-content-width) - 2vw) * 0.36 + 2vw)
 
         &__track
             padding-left: var(--work-track-padding-start)
-            padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+            padding-right: max(0px, calc(100% - var(--work-card-width) - var(--work-track-padding-start)))
             scroll-padding-inline-start: var(--work-track-padding-start)
-            scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+            scroll-padding-inline-end: max(0px, calc(100% - var(--work-card-width) - var(--work-track-padding-start)))
 
         &__arrows
             margin-left: var(--work-track-padding-start)
 
 @media all and (min-width: $breakpoint-tablet-l + 1)
     .work
-        &__section
-            padding: 8.75rem 0 5rem
-
         &__section--play &__sectionLayout,
         &__section--work &__sectionLayout
             grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr)
@@ -317,8 +376,12 @@
             column-gap: 5vw
             row-gap: 2rem
             align-content: start
-            min-height: calc(100vh - 8.75rem)
-            padding-left: var(--work-content-inset)
+            min-height: calc(100vh - 4rem)
+            width: 100%
+            max-width: var(--work-content-width)
+            margin-left: var(--work-content-inset)
+            margin-right: auto
+            padding-left: 0
             box-sizing: border-box
 
         &__title
@@ -337,16 +400,17 @@
             align-self: start
             margin-top: 1.25rem
             width: calc(100% + var(--work-content-inset))
+            max-width: none
             margin-left: 0
             margin-right: calc(-1 * var(--work-content-inset))
 
-        --work-carousel-start: calc(var(--work-content-inset) + (100vw - var(--work-content-inset) - 5vw) * 0.525 + 5vw)
+        --work-carousel-start: calc(var(--work-content-inset) + (var(--work-content-width) - 5vw) * 0.525 + 5vw)
 
         &__track
             padding-left: var(--work-track-padding-start)
-            padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+            padding-right: max(0px, calc(100% - var(--work-card-width) - var(--work-track-padding-start)))
             scroll-padding-inline-start: var(--work-track-padding-start)
-            scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+            scroll-padding-inline-end: max(0px, calc(100% - var(--work-card-width) - var(--work-track-padding-start)))
 
         &__arrows
             margin-left: var(--work-track-padding-start)

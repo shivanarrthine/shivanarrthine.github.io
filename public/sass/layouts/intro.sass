@@ -6,11 +6,6 @@
     overflow: hidden
 
     &__header
-        position: fixed
-        z-index: 10
-        top: 0
-        left: 0
-        right: 0
         padding: 2.5rem 0 1.5rem
         background: color-mix(in srgb, var(--color-background) 70%, transparent)
 
@@ -73,6 +68,7 @@
         p
             margin: 0
             color: color-mix(in srgb, var(--color-text-default) 90%, transparent)
+            text-wrap: pretty
             transition: color 600ms ease
 
         &--actions
@@ -140,6 +136,13 @@
         flex-shrink: 0
         fill: currentColor
         opacity: 0.85
+
+body.intro .intro__header
+    position: fixed
+    z-index: 10
+    top: 0
+    left: 0
+    right: 0
 
 @keyframes introMsgIn
     from
