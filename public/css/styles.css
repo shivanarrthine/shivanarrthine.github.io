@@ -1081,17 +1081,17 @@ a.textlink:hover {
 }
 .intro__msg p {
   margin: 0;
-  color: color-mix(in srgb, var(--color-text-default) 70%, transparent);
+  color: color-mix(in srgb, var(--color-text-default) 90%, transparent);
   transition: color 600ms ease;
 }
 .intro__msg--actions {
   margin-top: -1rem;
 }
 .intro__msg.is-recent p {
-  color: color-mix(in srgb, var(--color-text-default) 50%, transparent);
+  color: color-mix(in srgb, var(--color-text-default) 70%, transparent);
 }
 .intro__msg.is-old p {
-  color: color-mix(in srgb, var(--color-text-default) 30%, transparent);
+  color: color-mix(in srgb, var(--color-text-default) 50%, transparent);
 }
 .intro__avatar {
   width: 40px;
@@ -1190,8 +1190,11 @@ a.textlink:hover {
   }
 }
 .work {
-  --work-content-width: min(80vw, 75rem);
+  --work-content-width: min(80vw, 1200px);
   --work-content-inset: max(0px, calc((100vw - var(--work-content-width)) / 2));
+  --work-content-right: calc((100vw + var(--work-content-width)) / 2);
+  --work-carousel-start: 0px;
+  --work-track-padding-start: max(0px, calc(var(--work-content-right) - var(--work-card-width) - var(--work-carousel-start)));
   --work-card-width: min(400px, 85vw);
   --work-card-height: 580px;
   overflow-x: clip;
@@ -1260,10 +1263,10 @@ a.textlink:hover {
   display: flex;
   align-items: flex-start;
   gap: 1.75rem;
-  padding-left: var(--work-content-inset);
-  padding-right: calc(100% - var(--work-card-width) - var(--work-content-inset));
-  scroll-padding-inline-start: var(--work-content-inset);
-  scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-content-inset));
+  padding-left: var(--work-track-padding-start);
+  padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+  scroll-padding-inline-start: var(--work-track-padding-start);
+  scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -1332,7 +1335,7 @@ a.textlink:hover {
   font-size: inherit;
   font-weight: 500;
   line-height: inherit;
-  color: inherit;
+  color: #111;
 }
 .work__cardFooterSep {
   font-weight: 500;
@@ -1343,7 +1346,7 @@ a.textlink:hover {
   align-items: center;
   gap: 0.25rem;
   font-weight: 500;
-  color: inherit;
+  color: #111;
   text-decoration: none;
 }
 .work__cardLink:hover, .work__cardLink:focus-visible {
@@ -1358,7 +1361,7 @@ a.textlink:hover {
   justify-content: space-between;
   width: var(--work-card-width);
   margin-top: 1rem;
-  margin-left: var(--work-content-inset);
+  margin-left: var(--work-track-padding-start);
 }
 .work__arrows[hidden] {
   display: none;
@@ -1426,7 +1429,7 @@ a.textlink:hover {
 
 @media all and (max-width: 768px) {
   .work {
-    --work-content-width: min(90vw, 75rem);
+    --work-content-width: min(90vw, 1200px);
   }
 }
 @media all and (min-width: 768px) {
@@ -1481,14 +1484,17 @@ a.textlink:hover {
     margin-left: 0;
     margin-right: calc(-1 * var(--work-content-inset));
   }
+  .work {
+    --work-carousel-start: calc(var(--work-content-inset) + (100vw - var(--work-content-inset) - 2vw) * 0.36 + 2vw);
+  }
   .work__track {
-    padding-left: 0;
-    padding-right: calc(100% - var(--work-card-width));
-    scroll-padding-inline-start: 0;
-    scroll-padding-inline-end: calc(100% - var(--work-card-width));
+    padding-left: var(--work-track-padding-start);
+    padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+    scroll-padding-inline-start: var(--work-track-padding-start);
+    scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
   }
   .work__arrows {
-    margin-left: 0;
+    margin-left: var(--work-track-padding-start);
   }
 }
 @media all and (min-width: 1025px) {
@@ -1525,14 +1531,17 @@ a.textlink:hover {
     margin-left: 0;
     margin-right: calc(-1 * var(--work-content-inset));
   }
+  .work {
+    --work-carousel-start: calc(var(--work-content-inset) + (100vw - var(--work-content-inset) - 5vw) * 0.525 + 5vw);
+  }
   .work__track {
-    padding-left: 0;
-    padding-right: calc(100% - var(--work-card-width));
-    scroll-padding-inline-start: 0;
-    scroll-padding-inline-end: calc(100% - var(--work-card-width));
+    padding-left: var(--work-track-padding-start);
+    padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
+    scroll-padding-inline-start: var(--work-track-padding-start);
+    scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start));
   }
   .work__arrows {
-    margin-left: 0;
+    margin-left: var(--work-track-padding-start);
   }
 }
 @media (prefers-reduced-motion: reduce) {

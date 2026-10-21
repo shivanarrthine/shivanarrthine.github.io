@@ -1,6 +1,9 @@
 .work
-    --work-content-width: min(80vw, 75rem)
+    --work-content-width: min(80vw, 1200px)
     --work-content-inset: max(0px, calc((100vw - var(--work-content-width)) / 2))
+    --work-content-right: calc((100vw + var(--work-content-width)) / 2)
+    --work-carousel-start: 0px
+    --work-track-padding-start: max(0px, calc(var(--work-content-right) - var(--work-card-width) - var(--work-carousel-start)))
     --work-card-width: min(400px, 85vw)
     --work-card-height: 580px
     overflow-x: clip
@@ -69,10 +72,10 @@
         display: flex
         align-items: flex-start
         gap: 1.75rem
-        padding-left: var(--work-content-inset)
-        padding-right: calc(100% - var(--work-card-width) - var(--work-content-inset))
-        scroll-padding-inline-start: var(--work-content-inset)
-        scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-content-inset))
+        padding-left: var(--work-track-padding-start)
+        padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+        scroll-padding-inline-start: var(--work-track-padding-start)
+        scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
         overflow-x: auto
         overflow-y: hidden
         scroll-snap-type: x mandatory
@@ -141,7 +144,7 @@
         font-size: inherit
         font-weight: $font-weight-medium
         line-height: inherit
-        color: inherit
+        color: #111
 
     &__cardFooterSep
         font-weight: $font-weight-medium
@@ -152,7 +155,7 @@
         align-items: center
         gap: 0.25rem
         font-weight: $font-weight-medium
-        color: inherit
+        color: #111
         text-decoration: none
 
         &:hover,
@@ -168,7 +171,7 @@
         justify-content: space-between
         width: var(--work-card-width)
         margin-top: 1rem
-        margin-left: var(--work-content-inset)
+        margin-left: var(--work-track-padding-start)
 
         &[hidden]
             display: none
@@ -234,7 +237,7 @@
 
 @media all and (max-width: $breakpoint-tablet-p)
     .work
-        --work-content-width: min(90vw, 75rem)
+        --work-content-width: min(90vw, 1200px)
 
 @media all and (min-width: $breakpoint-tablet-p)
     .work
@@ -290,14 +293,16 @@
             margin-left: 0
             margin-right: calc(-1 * var(--work-content-inset))
 
+        --work-carousel-start: calc(var(--work-content-inset) + (100vw - var(--work-content-inset) - 2vw) * 0.36 + 2vw)
+
         &__track
-            padding-left: 0
-            padding-right: calc(100% - var(--work-card-width))
-            scroll-padding-inline-start: 0
-            scroll-padding-inline-end: calc(100% - var(--work-card-width))
+            padding-left: var(--work-track-padding-start)
+            padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+            scroll-padding-inline-start: var(--work-track-padding-start)
+            scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
 
         &__arrows
-            margin-left: 0
+            margin-left: var(--work-track-padding-start)
 
 @media all and (min-width: $breakpoint-tablet-l + 1)
     .work
@@ -335,14 +340,16 @@
             margin-left: 0
             margin-right: calc(-1 * var(--work-content-inset))
 
+        --work-carousel-start: calc(var(--work-content-inset) + (100vw - var(--work-content-inset) - 5vw) * 0.525 + 5vw)
+
         &__track
-            padding-left: 0
-            padding-right: calc(100% - var(--work-card-width))
-            scroll-padding-inline-start: 0
-            scroll-padding-inline-end: calc(100% - var(--work-card-width))
+            padding-left: var(--work-track-padding-start)
+            padding-right: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
+            scroll-padding-inline-start: var(--work-track-padding-start)
+            scroll-padding-inline-end: calc(100% - var(--work-card-width) - var(--work-track-padding-start))
 
         &__arrows
-            margin-left: 0
+            margin-left: var(--work-track-padding-start)
 
 @media (prefers-reduced-motion: reduce)
     .js [data-reveal]
