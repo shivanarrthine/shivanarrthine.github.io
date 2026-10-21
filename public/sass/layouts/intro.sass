@@ -1,0 +1,168 @@
+.intro
+    --intro-gap: 2rem
+    --intro-ease: cubic-bezier(0.2, 0.7, 0.2, 1)
+    height: 100vh
+    height: 100dvh
+    overflow: hidden
+
+    &__header
+        position: fixed
+        z-index: 10
+        top: 0
+        left: 0
+        right: 0
+        padding: 2.5rem 0 1.5rem
+        background: color-mix(in srgb, var(--color-background) 70%, transparent)
+
+    &__headerBar
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        gap: 1.5rem
+
+    &__headerText
+        width: 60%
+        max-width: 14.25rem
+
+    &__themeToggle
+        flex-shrink: 0
+
+    &__name,
+    &__tagline
+        margin: 0
+        font-size: 0.8125rem
+        font-weight: $font-weight-default
+        line-height: 1rem
+
+    &__name
+        color: var(--color-text-default)
+
+    &__tagline
+        margin-top: 2px
+        color: var(--color-text-muted)
+
+    &__chat
+        display: flex
+        flex-direction: column
+        height: 100%
+        padding: 7.5rem 0 2.6875rem
+        overflow-y: hidden
+
+        &--done
+            overflow-y: auto
+
+    &__messages
+        display: flex
+        flex-direction: column
+        gap: var(--intro-gap)
+        width: 100%
+        margin-top: auto
+
+    &__msg
+        display: none
+
+        &.is-visible
+            display: grid
+            grid-template-rows: 1fr
+            animation: introMsgIn 600ms var(--intro-ease)
+
+        > *
+            min-height: 0
+            overflow: hidden
+
+        p
+            margin: 0
+            color: color-mix(in srgb, var(--color-text-default) 70%, transparent)
+            transition: color 600ms ease
+
+        &--actions
+            margin-top: -1rem
+
+        &.is-recent p
+            color: color-mix(in srgb, var(--color-text-default) 50%, transparent)
+
+        &.is-old p
+            color: color-mix(in srgb, var(--color-text-default) 30%, transparent)
+
+    &__avatar
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color: #9B716A
+
+    &__actions
+        display: flex
+        flex-direction: column
+        gap: 8px
+
+    &__btn
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 4px
+        width: 100%
+        padding: 12px 16px
+        border: 1px solid var(--color-text-default)
+        background-color: var(--color-text-default)
+        color: var(--color-background)
+        font-family: inherit
+        font-size: inherit
+        line-height: inherit
+        text-align: left
+        cursor: pointer
+        transition: opacity 200ms ease
+
+        &:hover
+            opacity: 0.85
+
+        &:focus-visible
+            outline: 2px solid var(--color-text-accent)
+            outline-offset: -4px
+
+        &--outline
+            background-color: transparent
+            color: var(--color-text-default)
+
+        &.is-leaving
+            height: 0 !important
+            margin-top: -0.5rem
+            padding-block: 0
+            border-width: 0
+            overflow: hidden
+            opacity: 0
+            pointer-events: none
+            transition: opacity 600ms ease, height 400ms var(--intro-ease) 520ms, margin 400ms var(--intro-ease) 520ms, padding 400ms var(--intro-ease) 520ms, border-width 400ms var(--intro-ease) 520ms
+
+    &__btnIcon
+        flex-shrink: 0
+        fill: currentColor
+        opacity: 0.85
+
+@keyframes introMsgIn
+    from
+        grid-template-rows: 0fr
+        margin-top: calc(-1 * var(--intro-gap))
+        opacity: 0
+        translate: 0 12px
+
+@media all and (min-width: $breakpoint-tablet-p)
+    .intro
+        &__header
+            padding: 1.5rem 0
+
+        &__chat
+            padding-top: 6.25rem
+            padding-bottom: 2.875rem
+
+        &__actions
+            width: 60%
+
+@media (prefers-reduced-motion: reduce)
+    .intro
+        &__msg.is-visible
+            animation: none
+
+        &__msg p,
+        &__btn,
+        &__btn.is-leaving
+            transition: none
