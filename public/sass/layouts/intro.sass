@@ -32,9 +32,29 @@
     &__name
         color: var(--color-text-default)
 
+        a
+            font: inherit
+            color: inherit
+            text-decoration: none
+
+            &:hover,
+            &:focus-visible
+                color: inherit
+                text-decoration: none
+
     &__tagline
         margin-top: 2px
         color: var(--color-text-muted)
+
+        a
+            font: inherit
+            color: inherit
+            text-decoration: none
+
+            &:hover,
+            &:focus-visible
+                color: inherit
+                text-decoration: none
 
     &__chat
         display: flex
@@ -81,11 +101,11 @@
             color: color-mix(in srgb, var(--color-text-default) 50%, transparent)
 
     &__avatar
-        width: 40px
-        height: 40px
+        width: 60px
+        height: 60px
         border-radius: 50%
         background-color: #9B716A
-        background-image: url("/public/images/profile.jpg")
+        background-image: url("/public/images/profile_cropped.jpg")
         background-size: cover
         background-position: center
 

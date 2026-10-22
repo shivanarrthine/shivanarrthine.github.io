@@ -143,12 +143,23 @@ main.work
         gap: 0.25rem
         margin: 0
         padding: 1rem
+        font-size: 0.8rem
         color: inherit
         text-wrap: pretty
 
     &__captionText
         margin: 0
+        font-size: 0.8rem
         color: inherit
+
+        a
+            color: inherit
+            text-decoration: underline
+            text-underline-offset: 2px
+
+            &:hover,
+            &:focus-visible
+                color: inherit
 
     &__cardFooter
         display: flex
@@ -293,6 +304,9 @@ main.work
             height: var(--work-card-media-height)
             min-height: var(--work-card-media-height)
 
+        &__caption
+            margin-top: auto
+
         &__experience
             padding-top: 2rem
 
@@ -414,6 +428,13 @@ main.work
 
         &__arrows
             margin-left: var(--work-track-padding-start)
+
+html.dark .work__card
+    background-color: color-mix(in srgb, var(--card-bg, #EEEEEE) 85%, var(--color-background))
+
+@media (prefers-color-scheme: dark)
+    html:not(.light) .work__card
+        background-color: color-mix(in srgb, var(--card-bg, #EEEEEE) 85%, var(--color-background))
 
 @media (prefers-reduced-motion: reduce)
     .js [data-reveal]
