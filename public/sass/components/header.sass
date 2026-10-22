@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 .header
     padding: 4rem 0
 
@@ -11,8 +13,8 @@
         align-items: center
 
         span
-            font-family: $font-family-header
-            font-size: $font-size-xs
+            font-family: tokens.$font-family-header
+            font-size: tokens.$font-size-xs
             text-transform: uppercase
 
         .cta-arrow
@@ -26,7 +28,7 @@
 
 
 // Mobile devices
-@media all and (max-width: $breakpoint-mobile)
+@media all and (max-width: tokens.$breakpoint-mobile)
     .header
         padding: 4rem 0
 
@@ -34,7 +36,7 @@
             width: 100%
     
 // Tablet portrait devices
-@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+@media all and (min-width: tokens.$breakpoint-mobile) and (max-width: tokens.$breakpoint-tablet-p)
     .header
         padding: 4rem 0 6rem
 
@@ -42,7 +44,7 @@
             width: 100%
 
 // Tablet landscape devices
-@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+@media all and (min-width: tokens.$breakpoint-tablet-p + 1) and (max-width: tokens.$breakpoint-tablet-l)
     .header
         &__content
             width: 100%

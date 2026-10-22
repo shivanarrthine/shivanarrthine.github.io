@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .toast
     position: fixed
@@ -13,7 +15,7 @@
 
     &__message
         color: var(--color-background)
-        font-size: $font-size-sm
+        font-size: tokens.$font-size-sm
         margin: 0
 
     &.show

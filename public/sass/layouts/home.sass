@@ -1,3 +1,6 @@
+@use "../components/workCard"
+@use "../config/tokens"
+
 .home
     --home-content-width: min(70vw, 1080px)
     --home-content-inset: calc((100vw - var(--home-content-width)) / 2)
@@ -23,15 +26,15 @@
 
         &-name
             margin: 0
-            font-size: $font-size-default
-            font-weight: $font-weight-default
+            font-size: tokens.$font-size-default
+            font-weight: tokens.$font-weight-default
             line-height: 20px
             color: var(--color-text-default)
 
         &-tagline
             margin: 0
-            font-size: $font-size-default
-            font-weight: $font-weight-default
+            font-size: tokens.$font-size-default
+            font-weight: tokens.$font-weight-default
             line-height: 20px
             color: var(--color-text-secondary)
             text-transform: none
@@ -41,8 +44,8 @@
 
         &-label
             margin: 0 0 1rem
-            font-size: $font-size-default
-            font-weight: $font-weight-default
+            font-size: tokens.$font-size-default
+            font-weight: tokens.$font-weight-default
             line-height: 20px
             color: var(--color-text-default)
             text-transform: none
@@ -70,7 +73,7 @@
             top: 0
             right: 0
             width: min(20vw, 120px)
-            height: $work-card-media-height
+            height: workCard.$work-card-media-height
             pointer-events: none
             background: linear-gradient(to right, transparent, var(--color-background))
 
@@ -130,23 +133,23 @@
 
     &__copy
         margin: 0
-        font-size: $font-size-default
+        font-size: tokens.$font-size-default
         line-height: 20px
         color: var(--color-text-muted)
 
     &__tagline
         margin: 0
-        font-size: $font-size-default
+        font-size: tokens.$font-size-default
         line-height: 20px
         color: var(--color-text-secondary)
         text-align: right
 
-@media all and (max-width: $breakpoint-mobile)
+@media all and (max-width: tokens.$breakpoint-mobile)
     .home
         --home-content-width: 90vw
         --home-content-inset: 5vw
 
-@media all and (max-width: $breakpoint-tablet-p)
+@media all and (max-width: tokens.$breakpoint-tablet-p)
     .home
         &__work-bleed
             padding-right: var(--home-content-inset)

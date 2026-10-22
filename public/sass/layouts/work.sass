@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 html:has(main.work),
 body:has(main.work)
     overflow-x: clip
@@ -51,7 +53,7 @@ main.work
         margin: 0
         margin-left: -1rem
         font-size: min(50vw, 12.5rem)
-        font-weight: $font-weight-default
+        font-weight: tokens.$font-weight-default
         line-height: 1.2
         letter-spacing: -0.06em
         text-transform: uppercase
@@ -171,19 +173,19 @@ main.work
         display: inline
         margin: 0
         font-size: inherit
-        font-weight: $font-weight-medium
+        font-weight: tokens.$font-weight-medium
         line-height: inherit
         color: #111
 
     &__cardFooterSep
-        font-weight: $font-weight-medium
+        font-weight: tokens.$font-weight-medium
         color: inherit
 
     &__cardLink
         display: inline-flex
         align-items: center
         gap: 0.25rem
-        font-weight: $font-weight-medium
+        font-weight: tokens.$font-weight-medium
         color: #111
         text-decoration: none
 
@@ -264,7 +266,7 @@ main.work
         opacity: 1
         translate: 0 0
 
-@media all and (max-width: $breakpoint-tablet-p)
+@media all and (max-width: tokens.$breakpoint-tablet-p)
     body:has(main.work)
         --work-content-width: min(90vw, 1200px)
 
@@ -310,7 +312,7 @@ main.work
         &__experience
             padding-top: 2rem
 
-@media all and (min-width: $breakpoint-tablet-p + 1)
+@media all and (min-width: tokens.$breakpoint-tablet-p + 1)
     .work
         &__chatList
             max-width: 18rem
@@ -319,7 +321,7 @@ main.work
             width: 15.3125rem
             max-width: 100%
 
-@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+@media all and (min-width: tokens.$breakpoint-tablet-p + 1) and (max-width: tokens.$breakpoint-tablet-l)
     .work
         &__section--play &__sectionLayout,
         &__section--work &__sectionLayout
@@ -380,7 +382,7 @@ main.work
         &__arrows
             margin-left: var(--work-track-padding-start)
 
-@media all and (min-width: $breakpoint-tablet-l + 1)
+@media all and (min-width: tokens.$breakpoint-tablet-l + 1)
     .work
         &__section--play &__sectionLayout,
         &__section--work &__sectionLayout

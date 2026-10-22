@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 $work-card-width: 438px
 $work-card-media-height: 268px
 $work-card-gap: 24px
@@ -25,7 +27,7 @@ $work-card-gap: 24px
     &__caption
         margin: 0
         font-size: 0.8rem
-        font-weight: $font-weight-default
+        font-weight: tokens.$font-weight-default
         line-height: 20px
         color: var(--color-text-secondary)
 
@@ -82,7 +84,7 @@ $work-card-gap: 24px
         &:active
             cursor: default
 
-@media all and (max-width: $breakpoint-tablet-p)
+@media all and (max-width: tokens.$breakpoint-tablet-p)
     .workScroll,
     .workScroll.workScroll--locked
         flex-direction: column

@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .CaseStudyLayout
     padding: 0 0 6rem
@@ -55,7 +57,7 @@
 
 
 // Mobile devices
-@media all and (max-width: $breakpoint-tablet-p)
+@media all and (max-width: tokens.$breakpoint-tablet-p)
     .CaseStudyLayout
         &__steps
             grid-template-columns: auto
@@ -76,7 +78,7 @@
             height: 15rem
 
 // Tablet portrait devices
-@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+@media all and (min-width: tokens.$breakpoint-mobile) and (max-width: tokens.$breakpoint-tablet-p)
     .CaseStudyLayout
         &__grid
             grid-template-columns: 1fr
@@ -89,7 +91,7 @@
             height: 28rem
 
 // Tablet landscape devices
-@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+@media all and (min-width: tokens.$breakpoint-tablet-p + 1) and (max-width: tokens.$breakpoint-tablet-l)
     .CaseStudyLayout
         &__feature
             height: 900px
@@ -107,7 +109,7 @@
                     grid-row: auto
 
 // Large desktop monitors
-@media all and (min-width: $breakpoint-desktop-lg)
+@media all and (min-width: tokens.$breakpoint-desktop-lg)
     .CaseStudyLayout
         &__feature
             &--aok

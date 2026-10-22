@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 // managing all the images in portfolio
 
@@ -40,7 +42,7 @@ div[class*='img-']
 
 
 // PerlinX - Mobile
-@media all and (max-width: $breakpoint-mobile)
+@media all and (max-width: tokens.$breakpoint-mobile)
     .img-perlinx-feature
         height: 20rem
 
@@ -55,7 +57,7 @@ div[class*='img-']
             width: 100%;
 
 // PerlinX - Tablet portrait devices
-@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+@media all and (min-width: tokens.$breakpoint-mobile) and (max-width: tokens.$breakpoint-tablet-p)
     .img-perlinx-feature
         height: 42rem
     
@@ -66,7 +68,7 @@ div[class*='img-']
             width: 100%;
 
 // PerlinX - Tablet landscape devices
-@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+@media all and (min-width: tokens.$breakpoint-tablet-p + 1) and (max-width: tokens.$breakpoint-tablet-l)
     .img-perlinx-feature
         height: 40rem
     

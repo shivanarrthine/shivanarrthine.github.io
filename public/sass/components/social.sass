@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .social
     display: flex
@@ -55,7 +57,7 @@
 
 
 // Mobile devices
-@media all and (max-width: $breakpoint-mobile)
+@media all and (max-width: tokens.$breakpoint-mobile)
     .social
         margin-left: -0.8rem
         display: grid

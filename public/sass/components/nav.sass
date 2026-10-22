@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 .nav
     padding: 1.5rem 0 0
 
@@ -8,8 +10,8 @@
 
     &__brand
         margin-right: auto
-        font-size: $font-size-default
-        font-weight: $font-weight-default
+        font-size: tokens.$font-size-default
+        font-weight: tokens.$font-weight-default
         line-height: 20px
         color: var(--color-text-default)
         text-decoration: none
@@ -32,8 +34,8 @@
                 margin-left: 0
 
             a
-                font-size: $font-size-default
-                font-weight: $font-weight-default
+                font-size: tokens.$font-size-default
+                font-weight: tokens.$font-weight-default
                 opacity: 0.7
                 transition: opacity 0.3s ease
 

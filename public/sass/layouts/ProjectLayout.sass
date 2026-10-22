@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .ProjectLayout
     padding: 6rem 0
@@ -21,13 +23,13 @@
 
     &__title
         margin-bottom: 0.5rem
-        font-size: $font-size-md
-        font-weight: $font-weight-default
+        font-size: tokens.$font-size-md
+        font-weight: tokens.$font-weight-default
         line-height: 1.4
 
     &__client
         color: var(--color-text-secondary)
-        font-weight: $font-weight-default
+        font-weight: tokens.$font-weight-default
         text-transform: none
 
     &__content
@@ -65,7 +67,7 @@
 
 
 // Mobile devices
-@media all and (max-width: $breakpoint-mobile)
+@media all and (max-width: tokens.$breakpoint-mobile)
     .ProjectLayout
         padding: 3rem 0
 
