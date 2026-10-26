@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .CollectionLayout
     padding: 6rem 0 10rem
@@ -7,7 +9,7 @@
 
     &__client
         color: var(--color-text-secondary)
-        font-weight: $font-weight-medium
+        font-weight: tokens.$font-weight-medium
 
     &__desc
         margin-top: 2rem
@@ -24,7 +26,7 @@
    
 
 // Mobile devices
-@media all and (max-width: $breakpoint-mobile)
+@media all and (max-width: tokens.$breakpoint-mobile)
     .CollectionLayout
         padding: 3rem 0 6rem
 
@@ -41,7 +43,7 @@
 
 
 // Tablet portrait devices
-@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+@media all and (min-width: tokens.$breakpoint-mobile) and (max-width: tokens.$breakpoint-tablet-p)
     .CollectionLayout
         &__header
             width: 100%
@@ -54,7 +56,7 @@
 
 
 // Tablet landscape devices
-@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+@media all and (min-width: tokens.$breakpoint-tablet-p + 1) and (max-width: tokens.$breakpoint-tablet-l)
     .CollectionLayout
         &__grid
             padding-left: 0

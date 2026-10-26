@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .CollectionItem
     display: grid;
@@ -66,7 +68,7 @@
 
 
 // Mobile devices
-@media all and (max-width: $breakpoint-mobile)
+@media all and (max-width: tokens.$breakpoint-mobile)
     .CollectionItem
         grid-template-columns: 1fr
 
@@ -80,14 +82,14 @@
             height: 15rem
 
 // Tablet portrait devices
-@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+@media all and (min-width: tokens.$breakpoint-mobile) and (max-width: tokens.$breakpoint-tablet-p)
     .CollectionItem
         &__content
             width: 100%
 
             h4
                 width: 90%
-                font-size: $font-size-lg-mob
+                font-size: tokens.$font-size-lg-mob
 
         &__image
             &.feature--nf
@@ -95,13 +97,13 @@
 
 
 // Tablet landscape devices
-@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+@media all and (min-width: tokens.$breakpoint-tablet-p + 1) and (max-width: tokens.$breakpoint-tablet-l)
     .CollectionItem
         &__image
             height: 15rem
 
 // Large desktop monitors
-@media all and (min-width: $breakpoint-desktop-md)
+@media all and (min-width: tokens.$breakpoint-desktop-md)
     .CollectionItem
         &__image
             &.feature--nf

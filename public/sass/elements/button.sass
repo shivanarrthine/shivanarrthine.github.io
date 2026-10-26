@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 .button
     cursor: pointer
     height: 3rem
@@ -7,8 +9,8 @@
     border: 2px solid var(--color-text-default)
     outline: none
     border-radius: 0.5rem
-    font-family: $font-family-header
-    font-size: $font-size-xs
+    font-family: tokens.$font-family-header
+    font-size: tokens.$font-size-xs
     text-transform: uppercase
     transition: all 0.3s ease
 

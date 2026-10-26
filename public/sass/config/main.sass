@@ -1,21 +1,25 @@
+@use "tokens"
+
 
 *
     box-sizing: border-box
 
 html
     scroll-behavior: smooth
-    @include includeLight
+    @include tokens.includeLight
 
     &.light
-        @include includeLight
+        @include tokens.includeLight
     
     &.dark
-        @include includeDark
+        @include tokens.includeDark
 
 body
     background-color: var(--color-background)
-    font-family: $font-family-body, Arial, Helvetica, sans-serif
+    font-family: tokens.$font-family-body, ui-monospace, monospace
+    font-size: tokens.$font-size-default
     font-weight: 400
+    line-height: 20px
     color: var(--color-text-default)
 
 .hide
@@ -24,9 +28,9 @@ body
 // Theme
 @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference)
     html
-        @include includeLight
+        @include tokens.includeLight
 
 @media (prefers-color-scheme: dark)
     html
-        @include includeDark
+        @include tokens.includeDark
 

@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .Step
     display: grid
@@ -16,14 +18,14 @@
         border-radius: 100%
         background: var(--color-text-accent)
         color: white
-        font-weight: $font-weight-sbold
-        font-size: $font-size-sm
+        font-weight: tokens.$font-weight-sbold
+        font-size: tokens.$font-size-sm
     
     &__header
         grid-area: header
         margin: 0
-        font-size: $font-size-default
-        font-weight: $font-weight-sbold
+        font-size: tokens.$font-size-default
+        font-weight: tokens.$font-weight-sbold
         line-height: 2
 
     &__desc

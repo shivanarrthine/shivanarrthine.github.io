@@ -1,0 +1,111 @@
+@use "../config/tokens"
+
+$work-card-width: 438px
+$work-card-media-height: 268px
+$work-card-gap: 24px
+
+@mixin home-work-card-width
+    flex: 0 0 $work-card-width
+    width: $work-card-width
+    max-width: 100%
+
+.workCard
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    gap: 8px
+    text-decoration: none
+    color: inherit
+
+    &__media
+        flex-shrink: 0
+        width: 100%
+        height: $work-card-media-height
+        background-color: var(--color-surface-placeholder)
+        overflow: hidden
+
+    &__caption
+        margin: 0
+        font-size: 0.8rem
+        font-weight: tokens.$font-weight-default
+        line-height: 20px
+        color: var(--color-text-secondary)
+
+    &__title
+        color: var(--color-text-default)
+
+    &--placeholder
+        pointer-events: none
+
+.workScroll
+    display: flex
+    gap: $work-card-gap
+    overflow-x: auto
+    overflow-y: hidden
+    scroll-snap-type: x mandatory
+    scroll-behavior: smooth
+    overscroll-behavior-x: contain
+    -webkit-overflow-scrolling: touch
+    scrollbar-width: none
+    -ms-overflow-style: none
+    padding-right: 0
+    cursor: grab
+
+    &::-webkit-scrollbar
+        display: none
+
+    &:active
+        cursor: grabbing
+
+    .workCard
+        @include home-work-card-width
+        scroll-snap-align: start
+        scroll-snap-stop: always
+
+    &:not(.workScroll--locked):not(.workScroll--contained)
+        padding-right: calc(100% - #{$work-card-width})
+
+    &--contained
+        width: 100%
+
+        &:not(.workScroll--locked)
+            padding-right: calc(100% - #{$work-card-width})
+
+    &--locked
+        overflow-x: hidden
+        scroll-snap-type: none
+        cursor: default
+        touch-action: pan-y
+        pointer-events: none
+
+        .workCard
+            pointer-events: auto
+
+        &:active
+            cursor: default
+
+@media all and (max-width: tokens.$breakpoint-tablet-p)
+    .workScroll,
+    .workScroll.workScroll--locked
+        flex-direction: column
+        overflow-x: hidden
+        overflow-y: visible
+        scroll-snap-type: none
+        padding-right: 0
+        cursor: default
+        pointer-events: auto
+        touch-action: pan-y
+
+        &:active
+            cursor: default
+
+        &:not(.workScroll--locked)
+            padding-right: 0
+
+        .workCard
+            flex: 0 0 auto
+            width: 100%
+            max-width: none
+            scroll-snap-align: none
+            scroll-snap-stop: normal
+            pointer-events: auto

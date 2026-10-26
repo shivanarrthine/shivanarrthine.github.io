@@ -1,48 +1,49 @@
+@use "../config/tokens"
+
 .nav
-    padding: 1rem 0
+    padding: 1.5rem 0 0
 
     .container
         display: flex
-        justify-content: space-between
+        justify-content: flex-end
         align-items: center
 
-    &__logo
-        display: block
-        opacity: 0.3
-        transition: all 0.3s ease
+    &__brand
+        margin-right: auto
+        font-size: tokens.$font-size-default
+        font-weight: tokens.$font-weight-default
+        line-height: 20px
+        color: var(--color-text-default)
+        text-decoration: none
 
         &:hover
-            opacity: 1
-
-        svg path
-            fill: var(--color-text-default)
+            opacity: 0.7
 
     &__links
         display: flex
         justify-content: flex-end
         align-items: center
+        list-style: none
+        margin: 0
+        padding: 0
 
         li
-            margin-left: 4rem
+            margin: 0
 
             &.theme
-                margin-left: 5rem
+                margin-left: 0
 
-            a 
-                font-size: $font-size-sm
-                font-family: $font-family-header
-                font-weight: $font-weight-sbold
-                opacity: 0.5
-                transition: all 0.3s ease
+            a
+                font-size: tokens.$font-size-default
+                font-weight: tokens.$font-weight-default
+                opacity: 0.7
+                transition: opacity 0.3s ease
 
                 &:hover
                     opacity: 1
 
+.home .nav .container
+    justify-content: flex-end
 
-// Mobile, Tablet (portrait) devices
-@media all and (max-width: $breakpoint-tablet-p)
-    .nav
-        &__links
-            li:not(.theme)
-                display: none
-
+.home .nav__brand
+    display: none

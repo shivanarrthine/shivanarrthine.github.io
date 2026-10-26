@@ -10,10 +10,11 @@ let isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style
 
 $(document).ready(function(){
 
-    // init AOS
-    AOS.init({
-        once: true
-    });
+    if (typeof AOS !== "undefined") {
+        AOS.init({
+            once: true
+        });
+    }
 
     // detect current theme
     let currentTheme = userThemePreference();
@@ -32,8 +33,108 @@ $(document).ready(function(){
     window.matchMedia("(prefers-color-scheme: dark)").addListener(e => e.matches && switchToDarkTheme())
     window.matchMedia("(prefers-color-scheme: light)").addListener(e => e.matches && switchToLightTheme())
 
+    initHomeCarousels();
 
 });
+
+function initHomeCarousels() {
+    document.querySelectorAll(".home .workScroll").forEach(setupHomeCarousel);
+}
+
+function setupHomeCarousel(carousel) {
+    const fadeHost = carousel.closest(".home__carouselFade");
+    const cards = () => Array.from(carousel.querySelectorAll(".workCard"));
+
+    function cardsContentWidth() {
+        const items = cards();
+        if (!items.length) return 0;
+        const gap = parseFloat(getComputedStyle(carousel).columnGap || getComputedStyle(carousel).gap) || 0;
+        return items.reduce((total, card, index) => {
+            return total + card.getBoundingClientRect().width + (index < items.length - 1 ? gap : 0);
+        }, 0);
+    }
+
+    const mobileStackQuery = window.matchMedia("(max-width: 768px)");
+
+    function syncScrollLock() {
+        const useMobileStack = mobileStackQuery.matches;
+        const overflows = !useMobileStack && cardsContentWidth() > carousel.clientWidth + 1;
+        carousel.classList.toggle("workScroll--locked", !overflows || useMobileStack);
+        if (fadeHost) {
+            fadeHost.classList.toggle("home__carouselFade--scrollable", overflows);
+        }
+        if (!overflows) {
+            carousel.scrollLeft = 0;
+        }
+    }
+
+    function nearestCardIndex() {
+        const items = cards();
+        if (!items.length) return 0;
+        const scrollLeft = carousel.scrollLeft;
+        let closest = 0;
+        let minDistance = Infinity;
+        items.forEach((card, index) => {
+            const distance = Math.abs(card.offsetLeft - scrollLeft);
+            if (distance < minDistance) {
+                minDistance = distance;
+                closest = index;
+            }
+        });
+        return closest;
+    }
+
+    function scrollToCard(index) {
+        const items = cards();
+        if (!items.length) return;
+        const clamped = Math.max(0, Math.min(items.length - 1, index));
+        carousel.scrollTo({
+            left: items[clamped].offsetLeft,
+            behavior: "smooth"
+        });
+    }
+
+    carousel.addEventListener("scroll", () => {
+        if (carousel.classList.contains("workScroll--locked")) {
+            carousel.scrollLeft = 0;
+        }
+    });
+
+    carousel.addEventListener("wheel", (event) => {
+        if (carousel.classList.contains("workScroll--locked")) return;
+        if (Math.abs(event.deltaY) < Math.abs(event.deltaX)) return;
+        event.preventDefault();
+        const direction = event.deltaY > 0 ? 1 : -1;
+        scrollToCard(nearestCardIndex() + direction);
+    }, { passive: false });
+
+    carousel.addEventListener("keydown", (event) => {
+        if (carousel.classList.contains("workScroll--locked")) return;
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
+            scrollToCard(nearestCardIndex() + 1);
+        } else if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            scrollToCard(nearestCardIndex() - 1);
+        }
+    });
+
+    syncScrollLock();
+    if (typeof ResizeObserver !== "undefined") {
+        const observer = new ResizeObserver(syncScrollLock);
+        observer.observe(carousel);
+        cards().forEach((card) => observer.observe(card));
+    }
+    window.addEventListener("resize", syncScrollLock);
+    if (mobileStackQuery.addEventListener) {
+        mobileStackQuery.addEventListener("change", syncScrollLock);
+    } else if (mobileStackQuery.addListener) {
+        mobileStackQuery.addListener(syncScrollLock);
+    }
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(syncScrollLock);
+    }
+}
 
 function userThemePreference(){
     let theme = undefined;

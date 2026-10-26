@@ -1,20 +1,26 @@
 
-// // Light Theme Colors
+// Light Theme Colors (Paper 2026)
 $theme-light-background: #fff
 $theme-light-background-secondary: #f2f2f2
-$theme-light-text-default: #222
-$theme-light-text-body: #444
-$theme-light-text-secondary: #888
+$theme-light-text-default: #111111
+$theme-light-text-body: #111111
+$theme-light-text-secondary: #888888
+$theme-light-text-muted: rgba(#111111, 0.5)
+$theme-light-text-subtle: rgba(#111111, 0.8)
+$theme-light-surface-placeholder: #EEEEEE
 $theme-light-background-case: #F3F7FF
 $theme-light-background-case-px: #C9DAD9
 $theme-light-accent: #4678F8
 
-// // Dark Theme Colors
-$theme-dark-background: #222
-$theme-dark-background-secondary: #383838
-$theme-dark-text-default: #fff
-$theme-dark-text-body: rgba(#fff,0.9)
-$theme-dark-text-secondary: rgba(#fff,0.5)
+// Dark Theme Colors
+$theme-dark-background: #111111
+$theme-dark-background-secondary: #2a2a2a
+$theme-dark-text-default: #EEEEEE
+$theme-dark-text-body: rgba(#EEEEEE, 0.9)
+$theme-dark-text-secondary: #888888
+$theme-dark-text-muted: rgba(#EEEEEE, 0.5)
+$theme-dark-text-subtle: rgba(#EEEEEE, 0.7)
+$theme-dark-surface-placeholder: #333333
 $theme-dark-background-case: rgba(#fff, 0.05)
 $theme-dark-background-case-px: #8fc0bd
 $theme-dark-accent: #739AFF
@@ -28,6 +34,9 @@ $theme-dark-accent: #739AFF
     --color-text-default: #{$theme-light-text-default}
     --color-text-body: #{$theme-light-text-body}
     --color-text-secondary: #{$theme-light-text-secondary}
+    --color-text-muted: #{$theme-light-text-muted}
+    --color-text-subtle: #{$theme-light-text-subtle}
+    --color-surface-placeholder: #{$theme-light-surface-placeholder}
     --color-text-accent: #{$theme-light-accent}
 
 @mixin includeDark
@@ -38,16 +47,19 @@ $theme-dark-accent: #739AFF
     --color-text-default: #{$theme-dark-text-default}
     --color-text-body: #{$theme-dark-text-body}
     --color-text-secondary: #{$theme-dark-text-secondary}
+    --color-text-muted: #{$theme-dark-text-muted}
+    --color-text-subtle: #{$theme-dark-text-subtle}
+    --color-surface-placeholder: #{$theme-dark-surface-placeholder}
     --color-text-accent: #{$theme-dark-accent}
 
-// Fonts/
-$font-size-default: 1rem
-$font-size-xxl: 3rem // 48px
-$font-size-xl: 2rem // 32px
-$font-size-lg: 1.75rem // 24px
-$font-size-md: 1.125rem // 18px
-$font-size-sm: 0.875rem // 14px
-$font-size-xs: 0.75rem // 12px
+// Fonts
+$font-size-default: 0.9rem
+$font-size-xxl: 3rem
+$font-size-xl: 2rem
+$font-size-lg: 1.75rem
+$font-size-md: 1.125rem
+$font-size-sm: 0.875rem
+$font-size-xs: 0.75rem
 
 $font-weight-default: 400
 $font-weight-xbold: 800
@@ -55,9 +67,8 @@ $font-weight-bold: 700
 $font-weight-sbold: 600
 $font-weight-medium: 500
 
-$font-family-header: "Inter"
-$font-family-body: "Inter"
-
+$font-family-header: "Noto Sans Mono"
+$font-family-body: "Noto Sans Mono"
 
 // Responsive breakpoints
 $breakpoint-mobile: 480px
@@ -66,7 +77,6 @@ $breakpoint-tablet-l: 1024px
 $breakpoint-desktop: 1440px
 $breakpoint-desktop-md: 1700px
 $breakpoint-desktop-lg: 2560px
-
 
 // Mobile font sizes
 $font-size-xxl-mob: 2.5rem

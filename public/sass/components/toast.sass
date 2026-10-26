@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .toast
     position: fixed
@@ -5,7 +7,7 @@
     bottom: 0
     width: 100%
     text-align: center
-    background: var(--color-text-accent)
+    background: var(--color-text-default)
     padding: 0.5rem 2rem
     transform: translateY(100px)
     opacity: 0
@@ -13,7 +15,7 @@
 
     &__message
         color: var(--color-background)
-        font-size: $font-size-sm
+        font-size: tokens.$font-size-sm
         margin: 0
 
     &.show

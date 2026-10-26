@@ -1,3 +1,5 @@
+@use "../config/tokens"
+
 
 .section
     margin-bottom: 4rem
@@ -27,7 +29,7 @@
         outline: none
 
 // Mobile devices
-@media all and (max-width: $breakpoint-mobile)
+@media all and (max-width: tokens.$breakpoint-mobile)
     .section
         margin-bottom: 4rem
         
@@ -38,7 +40,7 @@
             margin-top: 2rem
 
 // Tablet portrait devices
-@media all and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet-p)
+@media all and (min-width: tokens.$breakpoint-mobile) and (max-width: tokens.$breakpoint-tablet-p)
     .section
         &__header
             width: 100% 
@@ -52,7 +54,7 @@
 
 
 // Tablet landscape devices
-@media all and (min-width: $breakpoint-tablet-p + 1) and (max-width: $breakpoint-tablet-l)
+@media all and (min-width: tokens.$breakpoint-tablet-p + 1) and (max-width: tokens.$breakpoint-tablet-l)
     .section
         &__header
             width: 100%

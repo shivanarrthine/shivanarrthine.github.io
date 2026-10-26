@@ -1,0 +1,167 @@
+@use "../components/workCard"
+@use "../config/tokens"
+
+.home
+    --home-content-width: min(70vw, 1080px)
+    --home-content-inset: calc((100vw - var(--home-content-width)) / 2)
+    padding-bottom: 4rem
+
+    &__masthead
+        padding-top: 2.5rem
+        padding-bottom: 4rem
+
+        .container
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            gap: 1.5rem
+
+    &__mastheadActions
+        flex-shrink: 0
+
+    &__intro
+        width: 240px
+        max-width: 100%
+        padding: 0
+
+        &-name
+            margin: 0
+            font-size: tokens.$font-size-default
+            font-weight: tokens.$font-weight-default
+            line-height: 20px
+            color: var(--color-text-default)
+
+        &-tagline
+            margin: 0
+            font-size: tokens.$font-size-default
+            font-weight: tokens.$font-weight-default
+            line-height: 20px
+            color: var(--color-text-secondary)
+            text-transform: none
+
+    &__section
+        margin-bottom: 4rem
+
+        &-label
+            margin: 0 0 1rem
+            font-size: tokens.$font-size-default
+            font-weight: tokens.$font-weight-default
+            line-height: 20px
+            color: var(--color-text-default)
+            text-transform: none
+
+        .container + &__work-bleed
+            margin-top: 0
+
+    &__work-bleed
+        position: relative
+        width: 100vw
+        margin-left: calc(50% - 50vw)
+        margin-right: calc(50% - 50vw)
+        margin-bottom: 0
+        padding-left: var(--home-content-inset)
+        padding-right: 0
+        box-sizing: border-box
+
+    &__carouselFade
+        position: relative
+        width: 100%
+
+        &--scrollable::after
+            content: ""
+            position: absolute
+            top: 0
+            right: 0
+            width: min(20vw, 120px)
+            height: workCard.$work-card-media-height
+            pointer-events: none
+            background: linear-gradient(to right, transparent, var(--color-background))
+
+    &__experience
+        display: flex
+        flex-direction: column
+        gap: 12px
+
+    &__experienceRow
+        display: flex
+        flex-wrap: wrap
+        gap: 8px
+        align-items: baseline
+
+        &-company
+            margin: 0
+            color: var(--color-text-default)
+            flex-shrink: 0
+
+        &-role
+            margin: 0
+            color: var(--color-text-secondary)
+
+    &__contact
+        margin: 0
+        color: var(--color-text-default)
+
+        .copyemail #copyEmailBtn
+            color: var(--color-text-default)
+            border-bottom: none
+            cursor: pointer
+
+            &:hover
+                opacity: 0.7
+
+    &__contactEmail,
+    &__contactLink
+        color: var(--color-text-default)
+        border-bottom: none
+        cursor: pointer
+
+        &:hover
+            opacity: 0.7
+
+    &__contactSep
+        color: var(--color-text-secondary)
+
+.siteFooter
+    padding: 4rem 0 2rem
+
+    .container
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: flex-end
+        gap: 1.5rem
+
+    &__copy
+        margin: 0
+        font-size: tokens.$font-size-default
+        line-height: 20px
+        color: var(--color-text-muted)
+
+    &__tagline
+        margin: 0
+        font-size: tokens.$font-size-default
+        line-height: 20px
+        color: var(--color-text-secondary)
+        text-align: right
+
+@media all and (max-width: tokens.$breakpoint-mobile)
+    .home
+        --home-content-width: 90vw
+        --home-content-inset: 5vw
+
+@media all and (max-width: tokens.$breakpoint-tablet-p)
+    .home
+        &__work-bleed
+            padding-right: var(--home-content-inset)
+
+        &__experienceRow
+            flex-direction: column
+            gap: 0
+
+    .siteFooter
+        .container
+            flex-direction: column
+            align-items: flex-start
+
+        &__tagline
+            text-align: left
