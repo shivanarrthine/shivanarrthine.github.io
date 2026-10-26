@@ -103,13 +103,21 @@
             color: color-mix(in srgb, var(--color-text-default) 50%, transparent)
 
     &__avatar
+        flex-shrink: 0
         width: 60px
         height: 60px
-        border-radius: 50%
         background-color: #9B716A
         background-image: url("/public/images/profile_cropped.jpg")
         background-size: cover
         background-position: center
+        mask-image: url("/public/images/avatar-blob.svg")
+        mask-size: 100% 100%
+        mask-repeat: no-repeat
+        mask-position: center
+        -webkit-mask-image: url("/public/images/avatar-blob.svg")
+        -webkit-mask-size: 100% 100%
+        -webkit-mask-repeat: no-repeat
+        -webkit-mask-position: center
 
     &__actions
         display: flex
