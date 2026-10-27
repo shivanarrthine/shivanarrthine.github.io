@@ -257,6 +257,36 @@ main.work
             line-height: 1rem
             color: var(--color-text-muted)
 
+    &__footerRow
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 1rem
+        align-self: stretch
+        width: 100%
+
+    &__footerLinks
+        display: flex
+        align-items: baseline
+        gap: 1rem
+        margin: 0
+
+    &__footerLinksSep
+        color: var(--color-text-muted)
+        font-size: 0.8125rem
+        line-height: 1rem
+
+    &__footerLink
+        font-size: 0.8125rem
+        line-height: 1rem
+        color: var(--color-text-muted)
+        text-decoration: none
+
+        &:hover,
+        &:focus-visible
+            color: var(--color-text-default)
+            text-decoration: underline
+
     &__copy
         opacity: 0.6
 

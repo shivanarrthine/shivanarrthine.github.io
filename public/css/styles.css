@@ -1476,6 +1476,35 @@ main.work {
   line-height: 1rem;
   color: var(--color-text-muted);
 }
+.work__footerRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
+  width: 100%;
+}
+.work__footerLinks {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0;
+}
+.work__footerLinksSep {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  line-height: 1rem;
+}
+.work__footerLink {
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+.work__footerLink:hover, .work__footerLink:focus-visible {
+  color: var(--color-text-default);
+  text-decoration: underline;
+}
 .work__copy {
   opacity: 0.6;
 }
