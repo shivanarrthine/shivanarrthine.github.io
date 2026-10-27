@@ -65,8 +65,33 @@
         padding: 7.5rem 0 2.6875rem
         overflow-y: hidden
 
-        &--done
+        &--done,
+        &--continued
             overflow-y: auto
+            overflow-anchor: none
+            padding-bottom: 2rem
+            scroll-padding-bottom: 2rem
+
+            .intro__messages
+                padding-bottom: 2rem
+                box-sizing: border-box
+
+    &__chatInner
+        flex: 1
+        min-height: 0
+        align-self: stretch
+        display: flex
+        flex-direction: column
+        width: 100%
+
+    &__chatMain
+        flex: 1
+        min-height: 0
+        display: flex
+        flex-direction: column
+
+        &--locked
+            flex: 0 0 auto
 
     &__messages
         display: flex
@@ -193,12 +218,31 @@ body.intro .intro__header
 
         &__chat
             align-items: center
+            box-sizing: border-box
+            flex-shrink: 0
+            height: 100dvh
+            max-height: 100dvh
             padding-top: 6.25rem
             padding-bottom: 2.875rem
+            overflow: hidden
+
+            &--done:not(.intro__chat--continued)
+                overflow: hidden
+
+            &--continued
+                overflow-y: auto
+
+        &__chatInner
+            height: 100%
+            min-height: 0
+
+        &__chatMain
+            align-self: center
+            width: 100%
+            max-width: 25rem
 
         &__messages.content-container
             width: 100%
-            max-width: 25rem
 
         &__actions
             width: 60%

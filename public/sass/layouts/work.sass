@@ -229,7 +229,7 @@ main.work
     &__chat
         --intro-gap: 2rem
         --intro-ease: cubic-bezier(0.2, 0.7, 0.2, 1)
-        padding: 2.5rem 0
+        padding: 0.5rem 0 2.5rem
 
         .content-container
             display: flex
@@ -242,13 +242,14 @@ main.work
         gap: var(--intro-gap)
 
     &__footer
-        padding: 2.5rem 0
+        padding: 2.5rem 0 0
 
     &__footerInner
         display: flex
         flex-direction: column
         align-items: flex-end
         gap: 2.5rem
+        box-sizing: border-box
         text-align: right
 
         p
@@ -287,8 +288,45 @@ main.work
             color: var(--color-text-default)
             text-decoration: underline
 
+        &--withIcon
+            display: inline-flex
+            align-items: center
+            gap: 0.35rem
+
+            &:hover,
+            &:focus-visible
+                text-decoration: none
+
+                .work__footerLinkIcon
+                    opacity: 1
+
+    &__footerLinkIcon
+        flex-shrink: 0
+        display: block
+        color: inherit
+
     &__copy
         opacity: 0.6
+
+    &__footerTagline
+        margin: 0
+
+@media all and (min-width: tokens.$breakpoint-tablet-p)
+    .work__footerInner
+        flex-direction: row
+        align-items: flex-start
+        justify-content: space-between
+        text-align: left
+        gap: 2.5rem
+
+    .work__footerRow
+        order: 1
+        width: auto
+        align-self: flex-start
+
+    .work__footerTagline
+        order: 2
+        text-align: right
 
 .js [data-reveal]
     opacity: 0

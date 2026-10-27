@@ -1,5 +1,6 @@
 window.createChat = function (root, options) {
     const onPause = (options && options.onPause) || function () {};
+    const onResume = (options && options.onResume) || function () {};
     const DEFAULT_DELAY = 1200;
     const LEAVE_DURATION = 950;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -37,6 +38,7 @@ window.createChat = function (root, options) {
 
     function resume() {
         released = true;
+        onResume();
         if (paused) {
             paused = false;
             step();

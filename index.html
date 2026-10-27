@@ -33,7 +33,7 @@
 	</script>
 
 </head>
-<body class="intro">
+<body id="top" class="intro">
 
 	<header class="intro__header">
 		<div class="content-container intro__headerBar">
@@ -46,6 +46,8 @@
 	</header>
 
 	<main id="introChat" class="intro__chat" aria-live="polite">
+		<div class="intro__chatInner">
+		<div class="intro__chatMain">
 		<ol class="intro__messages content-container">
 			<li class="intro__msg">
 				<div class="intro__avatar" aria-hidden="true"></div>
@@ -54,18 +56,18 @@
 				<p>Hi, I'm Shiva &#128075;</p>
 			</li>
 			<li class="intro__msg">
-				<p>A Senior Product Designer based in Malaysia, who has designed and built digital products for people around the world.</p>
+				<p>A Senior Product Designer based in Malaysia, who has designed products for people around the world.</p>
 			</li>
-			<li class="intro__msg" data-delay="3000">
+			<li class="intro__msg" data-delay="2800">
 				<p>I was part of the remote design team at Automattic, improving WooCommerce and helping merchants grow their businesses.</p>
 			</li>
-			<li class="intro__msg" data-delay="3400">
+			<li class="intro__msg" data-delay="2800">
 				<p>Before that, I worked across different corners of tech: from building startups at VLT Labs, to digital consulting at McKinsey, and exploring Web3 at Perlin.</p>
 			</li>
-			<li class="intro__msg" data-delay="4000">
+			<li class="intro__msg" data-delay="3400">
 				<p>I'm currently experimenting with new tools, exploring ideas, and building things for fun.</p>
 			</li>
-			<li class="intro__msg" data-delay="3000">
+			<li class="intro__msg" data-delay="2400">
 				<p>Here's some of my work over the years. Reach out if you'd like to connect or work together.</p>
 			</li>
 			<li class="intro__msg intro__msg--actions" data-delay="1600">
@@ -90,14 +92,14 @@
 				</div>
 			</li>
 		</ol>
+		</div>
+		</div>
 	</main>
 
-	<footer class="intro__footer">
-		<span class="copyemail">
-			<label for="email">Contact Email</label>
-			<input id="email" value="&#115;&#104;&#105;&#118;&#097;&#110;&#097;&#114;&#114;&#116;&#104;&#105;&#110;&#101;&#064;&#103;&#109;&#97;&#105;&#108;&#046;&#099;&#111;&#109;" readonly aria-readonly="false" />
-		</span>
-	</footer>
+	<span class="copyemail hide">
+		<label for="email">Contact Email</label>
+		<input id="email" value="&#115;&#104;&#105;&#118;&#097;&#110;&#097;&#114;&#114;&#116;&#104;&#105;&#110;&#101;&#064;&#103;&#109;&#97;&#105;&#108;&#046;&#099;&#111;&#109;" readonly aria-readonly="false" />
+	</span>
 
 	<div id="toastEmailCopied" class="toast">
 		<p class="toast__message">Email copied!</p>
