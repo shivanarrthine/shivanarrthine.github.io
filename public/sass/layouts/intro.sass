@@ -69,12 +69,6 @@
         &--continued
             overflow-y: auto
             overflow-anchor: none
-            padding-bottom: 2rem
-            scroll-padding-bottom: 2rem
-
-            .intro__messages
-                padding-bottom: 2rem
-                box-sizing: border-box
 
     &__chatInner
         flex: 1
@@ -90,15 +84,13 @@
         display: flex
         flex-direction: column
 
-        &--locked
-            flex: 0 0 auto
-
     &__messages
         display: flex
         flex-direction: column
         gap: var(--intro-gap)
         max-width: 100%
         margin-top: auto
+        padding-bottom: 2.5rem
 
     &__msg
         display: none
